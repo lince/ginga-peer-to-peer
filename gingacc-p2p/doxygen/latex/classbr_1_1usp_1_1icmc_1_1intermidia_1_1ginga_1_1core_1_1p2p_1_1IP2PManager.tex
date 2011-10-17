@@ -1,0 +1,219 @@
+\section{Referência da Classe br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager}
+\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager}\index{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager}}
+
+
+{\ttfamily \#include $<$IP2PManager.h$>$}
+
+Diagrama de Hierarquia para br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager}
+\end{center}
+\end{figure}
+\subsection*{Tipos Públicos}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf Status} \{ \par
+{\bf NONE} =  0, 
+{\bf OFFLINE} =  1, 
+{\bf XA} =  2, 
+{\bf AWAY} =  3, 
+\par
+{\bf DND} =  4, 
+{\bf ONLINE} =  5, 
+{\bf CHAT} =  6
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Métodos Públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$IP2PManager} ()
+\item 
+virtual void {\bf connect} (string server, int port, string username, talk\_\-base::InsecureCryptStringImpl pass, {\bf IP2PEventListener} $\ast$listener=NULL)=0
+\item 
+virtual void {\bf disconnect} ()=0
+\item 
+virtual void {\bf sendFiles} (vector$<$ string $>$ $\ast$files, string username)=0
+\item 
+virtual void {\bf sendFile} (string file, string username)=0
+\item 
+virtual void {\bf sendChatMessage} (string username, string text)=0
+\item 
+virtual vector$<$ buzz::Status $>$ $\ast$ {\bf getFriends} ()=0
+\item 
+virtual map$<$ string, buzz::Status $>$ $\ast$ {\bf getFriendsMap} ()=0
+\item 
+virtual void {\bf setStatus} ({\bf Status} s, string message)=0
+\item 
+virtual buzz::Status $\ast$ {\bf getStatus} ()=0
+\item 
+virtual void {\bf accept} ()=0
+\item 
+virtual void {\bf reject} ()=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Descrição Detalhada}
+Interface do gerenciador de conexões P2P. 
+
+\subsection{Enumerações}
+\index{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager}!Status@{Status}}
+\index{Status@{Status}!br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager}}
+\subsubsection[{Status}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager::Status}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager_ae4b55c6c0a7f1613e5616de08914237e}
+\begin{Desc}
+\item[Valores enumerados: ]\par
+\begin{description}
+\index{NONE@{NONE}!br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager}}\index{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager}!NONE@{NONE}}\item[{\em 
+NONE\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager_ae4b55c6c0a7f1613e5616de08914237eab09a6a91504ac9afe2b5ba380172135c}
+}]Usado quando o status não estiver definido. \index{OFFLINE@{OFFLINE}!br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager}}\index{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager}!OFFLINE@{OFFLINE}}\item[{\em 
+OFFLINE\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager_ae4b55c6c0a7f1613e5616de08914237ea7461c990afc006337f7afee3a6a9e188}
+}]Usado quando o usuário estiver desconectado. \index{XA@{XA}!br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager}}\index{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager}!XA@{XA}}\item[{\em 
+XA\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager_ae4b55c6c0a7f1613e5616de08914237ea63b825d6fe1c817d7efda9a8d7147532}
+}]eXtended Away -\/ Ausência estendida. \index{AWAY@{AWAY}!br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager}}\index{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager}!AWAY@{AWAY}}\item[{\em 
+AWAY\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager_ae4b55c6c0a7f1613e5616de08914237ea05723d382e712227f615f55123684ea0}
+}]Ausente \index{DND@{DND}!br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager}}\index{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager}!DND@{DND}}\item[{\em 
+DND\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager_ae4b55c6c0a7f1613e5616de08914237eae7f30a061277349987d27d5785be55eb}
+}]Do Not Disturb -\/ Não pertube. \index{ONLINE@{ONLINE}!br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager}}\index{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager}!ONLINE@{ONLINE}}\item[{\em 
+ONLINE\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager_ae4b55c6c0a7f1613e5616de08914237ea637e72c86a809aed5430d4f554d4edfd}
+}]Disponível. \index{CHAT@{CHAT}!br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager}}\index{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager}!CHAT@{CHAT}}\item[{\em 
+CHAT\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager_ae4b55c6c0a7f1613e5616de08914237ea78f3642b5e139385a31bf83b14c3ce3d}
+}]Querendo conversar. \end{description}
+\end{Desc}
+
+
+
+\subsection{Construtores \& Destrutores}
+\index{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager}!$\sim$IP2PManager@{$\sim$IP2PManager}}
+\index{$\sim$IP2PManager@{$\sim$IP2PManager}!br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager}}
+\subsubsection[{$\sim$IP2PManager}]{\setlength{\rightskip}{0pt plus 5cm}virtual br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager::$\sim$IP2PManager ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager_a0601bca0990ec599cec1a5ed33cf9358}
+Destói o objeto \doxyref{P2PManager}{pag.}{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1P2PManager}. 
+
+\subsection{Métodos}
+\index{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager}!accept@{accept}}
+\index{accept@{accept}!br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager}}
+\subsubsection[{accept}]{\setlength{\rightskip}{0pt plus 5cm}virtual void br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager::accept ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager_a2dcaff706e7b9f04602de239b287906d}
+Aceita o recebimento de um arquivo. 
+
+Implementado por {\bf br::usp::icmc::intermidia::ginga::core::p2p::P2PManager} \doxyref{}{pag.}{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1P2PManager_a517504ad3a8bda8e3d76b5da7ba9939f}.
+
+\index{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager}!connect@{connect}}
+\index{connect@{connect}!br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager}}
+\subsubsection[{connect}]{\setlength{\rightskip}{0pt plus 5cm}virtual void br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager::connect (string {\em server}, \/  int {\em port}, \/  string {\em username}, \/  talk\_\-base::InsecureCryptStringImpl {\em pass}, \/  {\bf IP2PEventListener} $\ast$ {\em listener} = {\ttfamily NULL})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager_a720d5e610e2018254d2ecc0237a9d4c4}
+Conecta ao servidor/porta desejados usando o nome de usuário e senha fornecidos.
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em server}]Servidor a ser conectado. \item[{\em port}]Porta usada para conexão com servidor. \item[{\em username}]Nome do usuário utilizado na conexão. \item[{\em pass}]Senha utilizado na conexão. \item[{\em listener}]Observador de eventos relacionados à conexão P2P, como mudança do estado da conexão e de transferências de arquivos ou mudança de status de algum amigo. \end{DoxyParams}
+
+
+Implementado por {\bf br::usp::icmc::intermidia::ginga::core::p2p::P2PManager} \doxyref{}{pag.}{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1P2PManager_a8def9c0c69b0065372cdff8e558f17f4}.
+
+\index{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager}}
+\subsubsection[{disconnect}]{\setlength{\rightskip}{0pt plus 5cm}virtual void br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager::disconnect ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager_a48b9e24798125b0937abdb1577475991}
+Disconecta do servidor. 
+
+Implementado por {\bf br::usp::icmc::intermidia::ginga::core::p2p::P2PManager} \doxyref{}{pag.}{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1P2PManager_a52a7440c36acc668ae0dba42edd67b7d}.
+
+\index{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager}!getFriends@{getFriends}}
+\index{getFriends@{getFriends}!br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager}}
+\subsubsection[{getFriends}]{\setlength{\rightskip}{0pt plus 5cm}virtual vector$<$buzz::Status$>$$\ast$ br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager::getFriends ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager_a45c81b565c3112b7d37328103f0918ab}
+Retorna a lista de amigos conectados.
+
+\begin{DoxyReturn}{Retorna}
+Um vetor com o status dos amigos conectados. completo. 
+\end{DoxyReturn}
+
+
+Implementado por {\bf br::usp::icmc::intermidia::ginga::core::p2p::P2PManager} \doxyref{}{pag.}{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1P2PManager_ab67876af258af7547c489675afb93635}.
+
+\index{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager}!getFriendsMap@{getFriendsMap}}
+\index{getFriendsMap@{getFriendsMap}!br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager}}
+\subsubsection[{getFriendsMap}]{\setlength{\rightskip}{0pt plus 5cm}virtual map$<$string, buzz::Status$>$$\ast$ br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager::getFriendsMap ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager_abfa3890264dd16b4b9d9eec28d13f69e}
+Retorna a lista de amigos conectados.
+
+\begin{DoxyReturn}{Retorna}
+Um mapa que relaciona o identificador do amigo (jid completo em forma de string) com seu status completo. 
+\end{DoxyReturn}
+
+
+Implementado por {\bf br::usp::icmc::intermidia::ginga::core::p2p::P2PManager} \doxyref{}{pag.}{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1P2PManager_a878ba7b06d254deb977941a0f73cc81c}.
+
+\index{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager}!getStatus@{getStatus}}
+\index{getStatus@{getStatus}!br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager}}
+\subsubsection[{getStatus}]{\setlength{\rightskip}{0pt plus 5cm}virtual buzz::Status$\ast$ br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager::getStatus ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager_a3e566b2e50875009b254caeed5f374f9}
+Permite acessar o próprio status. Pode ser chamado antes ou depois de se conectar.
+
+\begin{DoxyReturn}{Retorna}
+Status completo. 
+\end{DoxyReturn}
+
+
+Implementado por {\bf br::usp::icmc::intermidia::ginga::core::p2p::P2PManager} \doxyref{}{pag.}{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1P2PManager_a034857fb3348c52ec13fe66f8ee1fb3c}.
+
+\index{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager}!reject@{reject}}
+\index{reject@{reject}!br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager}}
+\subsubsection[{reject}]{\setlength{\rightskip}{0pt plus 5cm}virtual void br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager::reject ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager_ac43a21a8308ca36d1143026bbca1a4a9}
+Rejeita o recebimento de um arquivo. 
+
+Implementado por {\bf br::usp::icmc::intermidia::ginga::core::p2p::P2PManager} \doxyref{}{pag.}{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1P2PManager_a891a4047a8955c761683eecced70a43d}.
+
+\index{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager}!sendChatMessage@{sendChatMessage}}
+\index{sendChatMessage@{sendChatMessage}!br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager}}
+\subsubsection[{sendChatMessage}]{\setlength{\rightskip}{0pt plus 5cm}virtual void br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager::sendChatMessage (string {\em username}, \/  string {\em text})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager_a4de46a01e59fd8986ee7ccee739e49a1}
+Envia uma mensagem de texto para um determinado amigo.
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em username}]Identificador o amigo que irá receber os arquivos \item[{\em text}]Mensagem a ser enviada \end{DoxyParams}
+
+
+Implementado por {\bf br::usp::icmc::intermidia::ginga::core::p2p::P2PManager} \doxyref{}{pag.}{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1P2PManager_aba42f2f112f2cf40bb06d4ab5e91cbc1}.
+
+\index{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager}!sendFile@{sendFile}}
+\index{sendFile@{sendFile}!br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager}}
+\subsubsection[{sendFile}]{\setlength{\rightskip}{0pt plus 5cm}virtual void br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager::sendFile (string {\em file}, \/  string {\em username})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager_a780b05d26f8438b405cc176051ab31f4}
+Envia arquivo ou diretório para um determinado amigo.
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em file}]Caminho do arquivo ou diretório que será enviado \item[{\em jid}]Identificador o amigo que irá receber os arquivos \end{DoxyParams}
+
+
+Implementado por {\bf br::usp::icmc::intermidia::ginga::core::p2p::P2PManager} \doxyref{}{pag.}{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1P2PManager_a9fb02062e8400eef048133a547d9b5fa}.
+
+\index{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager}!sendFiles@{sendFiles}}
+\index{sendFiles@{sendFiles}!br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager}}
+\subsubsection[{sendFiles}]{\setlength{\rightskip}{0pt plus 5cm}virtual void br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager::sendFiles (vector$<$ string $>$ $\ast$ {\em files}, \/  string {\em username})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager_a5d90e6289098fedff8131f6a31e6be18}
+Envia arquivos e diretórios para um determinado amigo.
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em files}]Vetor contendo os caminhos dos arquivos e diretórios que serão enviados \item[{\em jid}]Identificador o amigo que irá receber os arquivos \end{DoxyParams}
+
+
+Implementado por {\bf br::usp::icmc::intermidia::ginga::core::p2p::P2PManager} \doxyref{}{pag.}{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1P2PManager_abcf62501438880b04515606c80939c9e}.
+
+\index{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager}!setStatus@{setStatus}}
+\index{setStatus@{setStatus}!br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager}}
+\subsubsection[{setStatus}]{\setlength{\rightskip}{0pt plus 5cm}virtual void br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager::setStatus ({\bf Status} {\em s}, \/  string {\em message})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager_adc2163d5ef7493c9d23f74a7fcdbb398}
+Permite definir o próprio status. Pode ser chamado antes ou depois de se conectar.
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em s}]Status a ser utilizado. \end{DoxyParams}
+\begin{DoxySeeAlso}{Veja também}
+\doxyref{Status}{pag.}{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager_ae4b55c6c0a7f1613e5616de08914237e}. 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em message}]Mensagem personalizada opcional. \end{DoxyParams}
+
+
+Implementado por {\bf br::usp::icmc::intermidia::ginga::core::p2p::P2PManager} \doxyref{}{pag.}{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1P2PManager_acdeac6f81a5606acf66cfe9b0de46994}.
+
+
+
+A documentação para esta classe foi gerada a partir do seguinte arquivo:\begin{DoxyCompactItemize}
+\item 
+include/{\bf IP2PManager.h}\end{DoxyCompactItemize}

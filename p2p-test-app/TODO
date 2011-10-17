@@ -1,0 +1,62 @@
+Peer-to_Peer Test Application TODO List
+--------------------------------------------------------------------------------
+
+This is the TODO list for Ginga NCL Reference Implementation. If you want to 
+work on any of this, please send us a mail to ask about it first.
+ 
+It's likely that work is already started and we can give you more details on
+the particular issue.
+--------------------------------------------------------------------------------
+- Melhorar o comportamento da interface quando o usuário usa o CIM para enviar
+		um arquivo para um amigo.
+	- Tanto quando o amigo aceita, quanto quando o amigo recusa, a aplicação
+		volta para a tela de amigos em vez de permanecer na tela da conversa.
+	- Se o evento multimodal contém mais de um arquivo, a aplicação está
+		mandando um por um em vez de criar uma pasta e mandar a pasta.
+	- Apenas o último arquivo do evento é mostrado na interface gráfica (apenas
+		se se tratar de uma imagem). Imagens anteriores são enviadas para o
+		amigo, mas não são mostradas na tela do usuário.
+
+- O GTalx possui um bug que faz com que ele não grave a imagem caso seja
+	escolhida uma pasta diferente da pasta inicial. O componente P2P não toma
+	conhecimento do erro e a aplicação de teste mostra a tela de sucesso. 
+
+- A trasferência por socket as vezes é interrompida na metade mas o módulo de
+	comunicação não toma conhecimento e pede pra fazer o parser mesmo assim,
+	o que causa um erro de parser.
+	
+- Permitir escrever chatMessage pela interface gráfica
+
+- Fazer o voltar da tela de arquivos ir pra tela do amigo.
+
+- Permitir logar pela interface
+	- Armazenar vários usuários no arquivo de configuração e permitir que
+		usuário escolha com qual logar.
+	- Perguntar para o usuário os parâmetros de conexão caso o arquivo de
+		configuração não seja encontrado.
+
+- Permitir enviar mais de um arquivo ou diretório
+	- Extender a classe GraphicList para permitir seleção de mais de um item e
+		usar essa funcionalidade na lista de arquivos.
+		- Pasta p2p-test-app tem um começo de código pra isso.
+	
+- Terminar de comentar o que não tá comentado.
+
+---
+
+- Tratar mensagens da tela de aguarde e sucesso quando mais de um item for
+	recebido.
+- Colocar destinatário ou remetente nas telas de oferecimento, aguarde e
+	sucesso.
+
+- Permitir definir a frase extra do status.
+
+- Corrigir possível estado inconsistente quando chega um arquivo fora da tela
+	principal.
+
+- Fazer uma barra de progresso do envio e recebimento do arquivo
+
+- Não permitir possível problema gerado pela espera para enviar arquivo para um
+	amigo que se desconectou depois de ter sido escolhido.
+	
+- Passar a usar o COMPSUPPORT

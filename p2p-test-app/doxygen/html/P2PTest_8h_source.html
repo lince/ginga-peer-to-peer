@@ -1,0 +1,247 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>P2P Test App: Código-Fonte de include/P2PTest.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Gerado por Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Página&nbsp;Principal</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Arquivos</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>Lista&nbsp;de&nbsp;Arquivos</span></a></li>
+    </ul>
+  </div>
+<h1>include/P2PTest.h</h1><a href="P2PTest_8h.html">Vá para a documentação deste arquivo.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/******************************************************************************</span>
+<a name="l00002"></a>00002 <span class="comment">Este arquivo eh parte da implementacao do ambiente declarativo do middleware</span>
+<a name="l00003"></a>00003 <span class="comment">Ginga (Ginga-NCL).</span>
+<a name="l00004"></a>00004 <span class="comment"></span>
+<a name="l00005"></a>00005 <span class="comment">Direitos Autorais Reservados (c) 1989-2007 USP/Laboratorio Intermidia</span>
+<a name="l00006"></a>00006 <span class="comment"></span>
+<a name="l00007"></a>00007 <span class="comment">Este programa eh software livre; voce pode redistribui-lo e/ou modificah-lo sob</span>
+<a name="l00008"></a>00008 <span class="comment">os termos da Licenca Publica Geral GNU versao 2 conforme publicada pela Free</span>
+<a name="l00009"></a>00009 <span class="comment">Software Foundation.</span>
+<a name="l00010"></a>00010 <span class="comment"></span>
+<a name="l00011"></a>00011 <span class="comment">Este programa eh distribuido na expectativa de que seja util, porem, SEM</span>
+<a name="l00012"></a>00012 <span class="comment">NENHUMA GARANTIA; nem mesmo a garantia implicita de COMERCIABILIDADE OU</span>
+<a name="l00013"></a>00013 <span class="comment">ADEQUACAO A UMA FINALIDADE ESPECIFICA. Consulte a Licenca Publica Geral do</span>
+<a name="l00014"></a>00014 <span class="comment">GNU versao 2 para mais detalhes.</span>
+<a name="l00015"></a>00015 <span class="comment"></span>
+<a name="l00016"></a>00016 <span class="comment">Voce deve ter recebido uma copia da Licenca Publica Geral do GNU versao 2 junto</span>
+<a name="l00017"></a>00017 <span class="comment">com este programa; se nao, escreva para a Free Software Foundation, Inc., no</span>
+<a name="l00018"></a>00018 <span class="comment">endereco 59 Temple Street, Suite 330, Boston, MA 02111-1307 USA.</span>
+<a name="l00019"></a>00019 <span class="comment"></span>
+<a name="l00020"></a>00020 <span class="comment">Para maiores informacoes:</span>
+<a name="l00021"></a>00021 <span class="comment">http://www.ncl.org.br</span>
+<a name="l00022"></a>00022 <span class="comment">http://www.ginga.org.br</span>
+<a name="l00023"></a>00023 <span class="comment">http://agua.intermidia.icmc.usp.br/intermidia</span>
+<a name="l00024"></a>00024 <span class="comment"> ******************************************************************************</span>
+<a name="l00025"></a>00025 <span class="comment">This file is part of the declarative environment of middleware Ginga (Ginga-NCL)</span>
+<a name="l00026"></a>00026 <span class="comment"></span>
+<a name="l00027"></a>00027 <span class="comment">Copyright: 1989-2007 USP/LABORATORIO INTERMIDIA, All Rights Reserved.</span>
+<a name="l00028"></a>00028 <span class="comment"></span>
+<a name="l00029"></a>00029 <span class="comment">This program is free software; you can redistribute it and/or modify it under</span>
+<a name="l00030"></a>00030 <span class="comment">the terms of the GNU General Public License version 2 as published by</span>
+<a name="l00031"></a>00031 <span class="comment">the Free Software Foundation.</span>
+<a name="l00032"></a>00032 <span class="comment"></span>
+<a name="l00033"></a>00033 <span class="comment">This program is distributed in the hope that it will be useful, but WITHOUT ANY</span>
+<a name="l00034"></a>00034 <span class="comment">WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A</span>
+<a name="l00035"></a>00035 <span class="comment">PARTICULAR PURPOSE.  See the GNU General Public License version 2 for more</span>
+<a name="l00036"></a>00036 <span class="comment">details.</span>
+<a name="l00037"></a>00037 <span class="comment"></span>
+<a name="l00038"></a>00038 <span class="comment">You should have received a copy of the GNU General Public License version 2</span>
+<a name="l00039"></a>00039 <span class="comment">along with this program; if not, write to the Free Software</span>
+<a name="l00040"></a>00040 <span class="comment">Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA</span>
+<a name="l00041"></a>00041 <span class="comment"></span>
+<a name="l00042"></a>00042 <span class="comment">For further information contact:</span>
+<a name="l00043"></a>00043 <span class="comment">Maria da Graça Pimentel - mgp@icmc.usp.br</span>
+<a name="l00044"></a>00044 <span class="comment">http://www.ncl.org.br</span>
+<a name="l00045"></a>00045 <span class="comment">http://www.ginga.org.br</span>
+<a name="l00046"></a>00046 <span class="comment">http://agua.intermidia.icmc.usp.br/intermidia</span>
+<a name="l00047"></a>00047 <span class="comment"> *******************************************************************************/</span>
+<a name="l00048"></a>00048 
+<a name="l00057"></a>00057 <span class="preprocessor">#ifndef P2PTEST_H</span>
+<a name="l00058"></a>00058 <span class="preprocessor"></span><span class="preprocessor">#define P2PTEST_H</span>
+<a name="l00059"></a>00059 <span class="preprocessor"></span>
+<a name="l00060"></a>00060 <span class="preprocessor">#include &lt;linceutil/LoggerUtil.h&gt;</span>
+<a name="l00061"></a>00061 <span class="keyword">using namespace </span>::br::ufscar::lince::util;
+<a name="l00062"></a>00062 
+<a name="l00063"></a>00063 <span class="preprocessor">#include &lt;iostream&gt;</span>
+<a name="l00064"></a>00064 <span class="keyword">using namespace </span>std;
+<a name="l00065"></a>00065 
+<a name="l00066"></a>00066 
+<a name="l00067"></a>00067 <span class="comment">// TODO Tirar esse include para deixar a app de teste independente da libjingle!</span>
+<a name="l00068"></a>00068 <span class="preprocessor">#include &lt;talk/session/fileshare/fileshare.h&gt;</span>   <span class="comment">// cricket::FileShareManifest</span>
+<a name="l00069"></a>00069 <span class="preprocessor">#include &lt;talk/xmpp/xmppengine.h&gt;</span>                               <span class="comment">// Para buzz::XmppEngine::State</span>
+<a name="l00070"></a>00070 
+<a name="l00071"></a>00071 <span class="preprocessor">#include &quot;system/io/interface/input/IInputEventListener.h&quot;</span>
+<a name="l00072"></a>00072 <span class="keyword">using namespace </span>::br::pucrio::telemidia::ginga::core::system::io;
+<a name="l00073"></a>00073 
+<a name="l00074"></a>00074 <span class="preprocessor">#include &quot;mmi/IMultimodalInputEventListener.h&quot;</span>
+<a name="l00075"></a>00075 <span class="keyword">using namespace </span>::br::ufscar::lince::ginga::core::mmi;
+<a name="l00076"></a>00076 
+<a name="l00077"></a>00077 <span class="preprocessor">#include &lt;p2p/P2PManager.h&gt;</span>
+<a name="l00078"></a>00078 <span class="keyword">using namespace </span>::br::usp::icmc::intermidia::ginga::core::p2p;
+<a name="l00079"></a>00079 
+<a name="l00080"></a>00080 <span class="preprocessor">#include &quot;<a class="code" href="GraphicInterface_8h.html">GraphicInterface.h</a>&quot;</span>
+<a name="l00081"></a>00081 <span class="preprocessor">#include &quot;<a class="code" href="GraphicList_8h.html">GraphicList.h</a>&quot;</span>
+<a name="l00082"></a>00082 
+<a name="l00083"></a>00083 
+<a name="l00084"></a>00084 <span class="keyword">namespace </span>br {
+<a name="l00085"></a>00085 <span class="keyword">namespace </span>usp {
+<a name="l00086"></a>00086 <span class="keyword">namespace </span>icmc {
+<a name="l00087"></a><a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html">00087</a> <span class="keyword">namespace </span>intermidia {
+<a name="l00088"></a><a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a11fd1a5352cf43a6cb06085fb29f4d27">00088</a> <span class="keyword">namespace </span>ginga {
+<a name="l00089"></a><a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a11fd1a5352cf43a6cb06085fb29f4d27a36048a927f575c1cb74b68824ca7f7d1">00089</a> <span class="keyword">namespace </span>p2ptest {
+<a name="l00090"></a><a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a11fd1a5352cf43a6cb06085fb29f4d27a915c0186121b7880b67219209aa9c52b">00090</a> 
+<a name="l00094"></a><a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a11fd1a5352cf43a6cb06085fb29f4d27a961945990b702df5fd1b3ad71e7c0d8b">00094</a> <span class="keyword">class </span><a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html">P2PTest</a> : <span class="keyword">public</span> IInputEventListener,
+<a name="l00095"></a><a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a11fd1a5352cf43a6cb06085fb29f4d27ad4cf7a56035f2c1df6d45d21f305264f">00095</a>                 <span class="keyword">public</span> IMultimodalInputEventListener, <span class="keyword">public</span> IP2PEventListener {
+<a name="l00096"></a><a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a11fd1a5352cf43a6cb06085fb29f4d27ad12c550f6256ec0282c589bb5b11dc71">00096</a> <span class="keyword">protected</span>:
+<a name="l00101"></a>00101         <span class="keyword">enum</span> <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a11fd1a5352cf43a6cb06085fb29f4d27">Screen</a> {
+<a name="l00102"></a><a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#af6e5fc57d62e2021b705b3891a9b9f40">00102</a>                 <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a11fd1a5352cf43a6cb06085fb29f4d27a36048a927f575c1cb74b68824ca7f7d1">NONE</a>,                   
+<a name="l00103"></a>00103                 <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a11fd1a5352cf43a6cb06085fb29f4d27a915c0186121b7880b67219209aa9c52b">DISCONNECTED</a>,   
+<a name="l00104"></a>00104                 <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a11fd1a5352cf43a6cb06085fb29f4d27a6204134a47f1c09ad7900bd0f75c1820">CONNECTED</a>,              
+<a name="l00105"></a><a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a865da0fbb41c7c494b66b554d8b54ce8">00105</a>                 <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a11fd1a5352cf43a6cb06085fb29f4d27a80ed367ea12acd5c59437d8eb57b9b5f">ACCEPTING</a>,              
+<a name="l00106"></a>00106                 <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a11fd1a5352cf43a6cb06085fb29f4d27a4fc562c84f59ef2f01ca011a27c2fc4e">STATUS</a>,                 
+<a name="l00107"></a>00107                 <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a11fd1a5352cf43a6cb06085fb29f4d27a961945990b702df5fd1b3ad71e7c0d8b">POPUP</a>,                  
+<a name="l00108"></a>00108                 <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a11fd1a5352cf43a6cb06085fb29f4d27ad4cf7a56035f2c1df6d45d21f305264f">FILES</a>,                  
+<a name="l00109"></a><a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#ae8df0348e22f5cd16a6cd76ff6dd0e73">00109</a>                 <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a11fd1a5352cf43a6cb06085fb29f4d27ad12c550f6256ec0282c589bb5b11dc71">TRANSFERING</a>,    
+<a name="l00110"></a>00110                 <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a11fd1a5352cf43a6cb06085fb29f4d27a748cc6d1831fca30b90ddf2f1a8bef3c">FRIEND</a>,                 
+<a name="l00111"></a>00111                 <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a11fd1a5352cf43a6cb06085fb29f4d27adb957f372dd9ee97bd4fe4c4e42499b0">SLIDESHOW</a>,              
+<a name="l00112"></a><a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#aca2c3d87a7f54525e756606ecbc279f6">00112</a>         };
+<a name="l00113"></a>00113 
+<a name="l00115"></a><a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a08746bd1df61ef0977cc0e722a73454d">00115</a>         <span class="keyword">static</span> <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html">P2PTest</a>* <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#af6e5fc57d62e2021b705b3891a9b9f40" title="Instância única de P2PTest.">_instance</a>;
+<a name="l00116"></a>00116 
+<a name="l00118"></a><a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a6d631998eb86edc1e38f00a81e9faa18">00118</a>         HLoggerPtr <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a865da0fbb41c7c494b66b554d8b54ce8" title="Componente auxiliar para realização de logs.">logger</a>;
+<a name="l00119"></a>00119 
+<a name="l00122"></a><a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a76ea399ebbe493a38abbd106d46f0f52">00122</a>         P2PManager* <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#ae8df0348e22f5cd16a6cd76ff6dd0e73">p2p</a>;
+<a name="l00123"></a>00123         
+<a name="l00125"></a><a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a47b253afdb70df4d234aa58b143162aa">00125</a>         <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a11fd1a5352cf43a6cb06085fb29f4d27">Screen</a> <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#aca2c3d87a7f54525e756606ecbc279f6" title="Indica a tela atualmente visível da aplição.">visibleScreen</a>;
+<a name="l00126"></a>00126 
+<a name="l00128"></a>00128         buzz::XmppEngine::State <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a08746bd1df61ef0977cc0e722a73454d" title="Indica o estado da conexção P2P.">state</a>;
+<a name="l00129"></a><a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a94a04fee59f399930d531f61d5b5d7b1">00129</a> 
+<a name="l00131"></a>00131         IColor* <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a6d631998eb86edc1e38f00a81e9faa18" title="Indica a cor de fundo da interface gráfica.">backgroundColor</a>;
+<a name="l00132"></a><a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a8e77685aa06f31a3d54eaef77088f15c">00132</a> 
+<a name="l00135"></a><a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#adfd31496c40f547a6e846980cdd9a86a">00135</a>         IColor* <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a76ea399ebbe493a38abbd106d46f0f52">selectedItemColor</a>;
+<a name="l00136"></a>00136 
+<a name="l00138"></a><a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a435066a0ee092f135813e9989863da03">00138</a>         IColor* <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a47b253afdb70df4d234aa58b143162aa" title="Indica a cor da fonte usada na interface gráfica.">fontColor</a>;
+<a name="l00139"></a>00139 
+<a name="l00142"></a>00142         IColor* <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a94a04fee59f399930d531f61d5b5d7b1">selectedItemFontColor</a>;
+<a name="l00143"></a>00143 
+<a name="l00145"></a>00145         IColor* <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a8e77685aa06f31a3d54eaef77088f15c" title="Cor usada para desenhar o botão vermelho na interface gráfica.">red</a>;
+<a name="l00146"></a>00146 
+<a name="l00148"></a><a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a9c503188393b9d57cbabca3b337980da">00148</a>         IColor* <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#adfd31496c40f547a6e846980cdd9a86a" title="Cor usada para desenhar o botão verde na interface gráfica.">green</a>;
+<a name="l00149"></a>00149 
+<a name="l00151"></a>00151         IColor* <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a435066a0ee092f135813e9989863da03" title="Cor usada para desenhar o botão amarelo na interface gráfica.">yellow</a>;
+<a name="l00152"></a><a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#aeea9a226edfa7cab92b78033d818997c">00152</a> 
+<a name="l00154"></a>00154         IColor* <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a4b7fa4f6cb76ac0f4360d65414805edd" title="Cor usada para desenhar o botão azul na interface gráfica.">blue</a>;
+<a name="l00155"></a>00155 
+<a name="l00161"></a>00161         <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicInterface.html">GraphicInterface</a>* <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a9c503188393b9d57cbabca3b337980da">gi</a>;
+<a name="l00162"></a><a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a7fede5bee44b8fd277485a2b69710c39">00162</a> 
+<a name="l00165"></a><a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a812d6a1639084ec720b069bdd0aec885">00165</a>         <span class="keywordtype">string</span> <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#aeea9a226edfa7cab92b78033d818997c">destinationJid</a>;
+<a name="l00166"></a>00166 
+<a name="l00169"></a><a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a40e2c1fbfdec056e6c4a97f827d4661c">00169</a>         buzz::Status* <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a53e9ff9b4b6a072ec71e487b9b854098">destinationStatus</a>;
+<a name="l00170"></a>00170 
+<a name="l00175"></a>00175         vector&lt;string&gt;* <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a7fede5bee44b8fd277485a2b69710c39">files</a>;
+<a name="l00176"></a>00176 
+<a name="l00178"></a>00178         vector&lt;string&gt;* <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a812d6a1639084ec720b069bdd0aec885" title="Guarda a lista dos nomes dos amigos conectados.">friendsName</a>;
+<a name="l00179"></a><a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#ad5622a00ffd7ed5a9f68b8a172be2ad1">00179</a> 
+<a name="l00182"></a>00182         vector&lt;bool&gt;* <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a40e2c1fbfdec056e6c4a97f827d4661c">friendsIsFileShareCapable</a>;
+<a name="l00183"></a><a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#ae8990fc8c2f4d84277218938464073b5">00183</a> 
+<a name="l00185"></a>00185         vector&lt;string&gt;::iterator <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#ae7f6dd844e6246d3f74d1320b8334738" title="Permite mostrar as imagens recebidas como um slideshow.">filesIterator</a>;
+<a name="l00186"></a>00186 
+<a name="l00187"></a>00187         <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicList.html">GraphicList</a>* gl;
+<a name="l00188"></a>00188 
+<a name="l00192"></a>00192         <span class="keywordtype">string</span> <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#ad5622a00ffd7ed5a9f68b8a172be2ad1">fileTransfered</a>;
+<a name="l00193"></a>00193 
+<a name="l00196"></a>00196         list&lt;string&gt;* <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#ae8990fc8c2f4d84277218938464073b5">chatMessages</a>;
+<a name="l00197"></a>00197 
+<a name="l00202"></a>00202         <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#aa2461ffc7c87e1d97df2c5ae908556d3">P2PTest</a>();
+<a name="l00203"></a>00203 
+<a name="l00207"></a>00207         <span class="keywordtype">void</span> <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#adb75034505688077ec100c95304d0df9">initializeWindow</a>();
+<a name="l00208"></a>00208 
+<a name="l00213"></a>00213         <span class="keywordtype">void</span> <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a035e0b75cb72481127b29b1de663dc02">showMainScreen</a>();
+<a name="l00214"></a>00214 
+<a name="l00218"></a>00218         <span class="keywordtype">void</span> <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a93271789d68ce954a5f5cbd87aa2d60e">showDisconnected</a>();
+<a name="l00219"></a>00219 
+<a name="l00223"></a>00223         <span class="keywordtype">void</span> <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a08df079252ee24956e6d2c1193e528cc">showConnected</a>();
+<a name="l00224"></a>00224 
+<a name="l00232"></a>00232         <span class="keywordtype">void</span> <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#ac14589ced6648ca1fac134ed011655bf">showFriend</a>(<span class="keywordtype">string</span>* filename = NULL);
+<a name="l00233"></a>00233 
+<a name="l00238"></a>00238         <span class="keywordtype">void</span> <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#aa470db50baf4ef4b24c223c3fec5d63a">showPossibleFilesToSend</a>();
+<a name="l00239"></a>00239 
+<a name="l00244"></a>00244         <span class="keywordtype">void</span> <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#ab90dd742e148990b2b3c6bc1238cb3bf">showFileshareCapabilityWarning</a>();
+<a name="l00245"></a>00245 
+<a name="l00250"></a>00250         <span class="keywordtype">void</span> <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#af99020a5e2a687c4a6675ff5ab842c6f">showTransfering</a>();
+<a name="l00251"></a>00251 
+<a name="l00255"></a>00255         <span class="keywordtype">void</span> <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a34ab7e125a8ff41a6a74285d5642be99">showSuccess</a>();
+<a name="l00256"></a>00256 
+<a name="l00260"></a>00260         <span class="keywordtype">void</span> <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a60f874e2906da4ec16f9745e2d2b396b">showImage</a>();
+<a name="l00261"></a>00261 
+<a name="l00265"></a>00265         <span class="keywordtype">void</span> <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#ab4950e5d952f49e6faec6a83a9f67d7f">showStatusChoice</a>();
+<a name="l00266"></a>00266 
+<a name="l00270"></a>00270         <span class="keywordtype">void</span> <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a036d18c3b49afa960e152b7d324f8c38">showHelp</a>();
+<a name="l00271"></a>00271 
+<a name="l00279"></a>00279         <span class="keywordtype">bool</span> <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a02843072acbb4470a0d790184fcf9ae3">showOffer</a>(<span class="keywordtype">string</span> message);
+<a name="l00280"></a>00280 
+<a name="l00287"></a>00287         <span class="keywordtype">void</span> <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#ae29ab1c05460d638ef53be3c03b833ba">fillVectorWithImageNames</a>(<span class="keywordtype">string</span> folder);
+<a name="l00288"></a>00288 
+<a name="l00293"></a>00293         <span class="keywordtype">void</span> <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a13c4429626ee810b01d8d24be069f032">fillVectorWithNamesOfFriends</a>();
+<a name="l00294"></a>00294 
+<a name="l00301"></a>00301         <span class="keywordtype">void</span> <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a05ab50db35fcfa517720eb7b93c15b8a">fillVectorWithFileNames</a>(<span class="keywordtype">string</span> folder);
+<a name="l00302"></a>00302 
+<a name="l00309"></a>00309         <span class="keywordtype">bool</span> <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a068a23e62dfaa67353ee77de98316246">isImage</a>(<span class="keywordtype">string</span> path);
+<a name="l00310"></a>00310 
+<a name="l00316"></a>00316         <span class="keywordtype">bool</span> <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a976416faeae776153d757d38a4c82cd0">isFolder</a>(<span class="keywordtype">string</span> path);
+<a name="l00317"></a>00317 
+<a name="l00322"></a>00322         <span class="keywordtype">void</span> <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#aba9db2cf78662342fa6c9c190830edbf">connect</a>();
+<a name="l00323"></a>00323 
+<a name="l00332"></a>00332         <span class="keywordtype">void</span> <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a4088bb9cbf5f13b093188fd05a2d5b2c">transferStateChanged</a>(FileShareClient::State <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a08746bd1df61ef0977cc0e722a73454d" title="Indica o estado da conexção P2P.">state</a>,
+<a name="l00333"></a>00333                         <span class="keyword">const</span> cricket::FileShareManifest* manifest);
+<a name="l00334"></a>00334 
+<a name="l00340"></a>00340         <span class="keywordtype">void</span> <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a19ebcfcbd27149c44decc1130d815763">stateChanged</a>(buzz::XmppEngine::State <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a08746bd1df61ef0977cc0e722a73454d" title="Indica o estado da conexção P2P.">state</a>);
+<a name="l00341"></a>00341 
+<a name="l00347"></a>00347         <span class="keywordtype">void</span> <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a3cdc87c3fd4fe3838de4b2264170e61e">friendsStatusChanged</a>(<span class="keyword">const</span> buzz::Status &amp;status);
+<a name="l00348"></a>00348 
+<a name="l00355"></a>00355         <span class="keywordtype">void</span> <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#adb58c4c6d48beb39eaba4bdeeb0e6bcb">chatMessageReceived</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; from, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; text);
+<a name="l00356"></a>00356 
+<a name="l00361"></a>00361         <span class="keywordtype">void</span> <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a84ba1dd6d0ea0b8712f3a1a1f2fad4e3">registerListener</a>();
+<a name="l00362"></a>00362 
+<a name="l00369"></a>00369         <span class="keywordtype">string</span> <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#aff721cc70c3ddbde9fbff93a99878b36">statusToString</a>(buzz::Status::Show statusShow);
+<a name="l00370"></a>00370 
+<a name="l00374"></a>00374         <span class="keywordtype">void</span> <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a83850c627de635c46b9a229002e8e9e6">updateFileshareCapableFriends</a>();
+<a name="l00375"></a>00375 
+<a name="l00376"></a>00376 
+<a name="l00377"></a>00377 <span class="keyword">public</span>:
+<a name="l00383"></a>00383         <span class="keyword">static</span> <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html">P2PTest</a>* <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a4c0684e168f8de3bd343e9107c0ec094">getInstance</a>();
+<a name="l00384"></a>00384 
+<a name="l00388"></a>00388         <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#aee8ab700839362f85791fe9d78159251">~P2PTest</a>();
+<a name="l00389"></a>00389 
+<a name="l00395"></a>00395         <span class="keywordtype">bool</span> <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#a1fa2c131cb48dbcf86af2e93c28525db">userEventReceived</a>(IInputEvent* ev);
+<a name="l00396"></a>00396 
+<a name="l00402"></a>00402         <span class="keywordtype">bool</span> <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest.html#aa191d3957a4009932968e3e67a41dbb0">multimodalUserEventReceived</a>(IMultimodalInputEvent* ev);
+<a name="l00403"></a>00403 };
+<a name="l00404"></a>00404 
+<a name="l00405"></a>00405 }
+<a name="l00406"></a>00406 }
+<a name="l00407"></a>00407 }
+<a name="l00408"></a>00408 }
+<a name="l00409"></a>00409 }
+<a name="l00410"></a>00410 }
+<a name="l00411"></a>00411 
+<a name="l00412"></a>00412 <span class="preprocessor">#endif //P2PTEST_H</span>
+</pre></div></div>
+<hr class="footer"/><address style="text-align: right;"><small>Gerado em Wed Nov 17 16:38:28 2010 para P2P Test App por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

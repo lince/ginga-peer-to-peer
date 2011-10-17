@@ -1,0 +1,23 @@
+This is the Ginga Program.
+
+The autogen.sh script does all the magic calls to automake/autoconf and
+friends that are needed to configure the compiling environment.
+
+DEPENDENCIES
+============
+-> libtool    >= 1.3.4
+-> autoconf   >= 2.13
+-> automake   >= 1.4
+-> gingacc-cm >= 0.11.2
+-> gingancl   >= 0.11.2
+-> gingaj     >= 0.11.2 (optional when gingancl project is built)
+
+INSTALLATION
+============
+As mentioned above, autogen.sh does all the `configure' magic.
+So the installation steps are:
+   $ ./autogen.sh
+   $ make
+   $ make install
+If you need to customize any path or regular `configure' value, please
+refer to the INSTALL file.

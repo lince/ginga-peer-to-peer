@@ -1,0 +1,114 @@
+AC_INIT(configure.in)
+AM_INIT_AUTOMAKE(p2p-test-app, 0.11.2)
+AM_CONFIG_HEADER(config.h)
+
+##############################
+# Checks for programs.
+##############################
+
+
+AC_LANG_CPLUSPLUS
+AC_PROG_CXX([g++])
+AC_PROG_LIBTOOL
+
+CXXFLAGS="-fPIC $CXXFLAGS"
+CFLAGS="-fPIC $CFLAGS"
+
+# Bring additional directories where things might be found into our
+# search path. I don't know why autoconf doesn't do this by default
+for spfx in /usr/local/lib/ginga/ /usr/local/lib/libjingle/; do
+if test -d ${spfx}; then
+LDFLAGS="-L${spfx} $LDFLAGS"
+fi
+done
+
+for spfx in /usr/local/include/ginga/ /usr/local/include/libjingle; do
+if test -d ${spfx}; then
+CPPFLAGS="-I${spfx} $CPPFLAGS"
+fi
+done
+
+
+# Não estamos conseguindo fazer com que todas as checagem abaixo funcionem.
+# Mesmo sabendo que os headers estão onde deveriam, a checagem diz que não achou.
+# Se não me engano, tivemos o mesmo problema com o componente de interação
+# multimodal, e acho que simplesmente tiramos a checagem como fizemos aqui.
+# Descobrimos que a quantidade de diretórios acrescentados acima influencia.
+
+##############################
+# Checks for header files.   #
+##############################
+
+##############
+# Lince Util #
+##############
+#AC_CHECK_HEADER([linceutil/LoggerUtil.h], [], AC_MSG_ERROR([
+
+#Couldn't find Lince Util headers.
+#Please install Lince Util.
+
+#]))
+
+################
+# Ginga-CC P2P #
+################
+#AC_CHECK_HEADER([p2p/IP2PManager.h], [], AC_MSG_ERROR([
+
+#Couldn't find Ginga-CC P2P headers.
+#Please install Ginga-CC P2P.
+
+#]))
+
+#############
+# libJingle #
+#############
+#AC_CHECK_HEADER([talk/base/cryptstring.h], [], AC_MSG_ERROR([
+
+#Couldn't find libJingle headers.
+#Please install libJingle project.
+
+#]))
+
+
+########################
+# Checks for libraries #
+########################
+
+##############
+# Lince Util #
+##############
+AC_HAVE_LIBRARY(linceutil, , AC_ERROR([
+
+Couldn't find Lince Util library.
+Please install Lince Util.
+
+]))
+
+################
+# Ginga-CC P2P #
+################
+#AC_HAVE_LIBRARY(gingaccp2p, , AC_ERROR([
+
+#Couldn't find Ginga-CC P2P library.
+#Please install Ginga-CC P2P.
+
+#]))
+
+#############
+# libJingle #
+#############
+
+#AC_HAVE_LIBRARY(cricketbase, , AC_ERROR([
+
+#Couldn't find libJingle library.
+#Please install libJingle Library.
+
+#]))
+
+##############################
+# Makefiles
+##############################
+
+AC_OUTPUT([
+Makefile include/Makefile src/Makefile files/Makefile
+])

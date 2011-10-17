@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Ginga-CC P2P: Código-Fonte de include/FileShareClient.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Gerado por Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Página&nbsp;Principal</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Arquivos</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>Lista&nbsp;de&nbsp;Arquivos</span></a></li>
+    </ul>
+  </div>
+<h1>include/FileShareClient.h</h1><a href="FileShareClient_8h.html">Vá para a documentação deste arquivo.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/******************************************************************************</span>
+<a name="l00002"></a>00002 <span class="comment">Este arquivo eh parte da implementacao do ambiente declarativo do middleware</span>
+<a name="l00003"></a>00003 <span class="comment">Ginga (Ginga-NCL).</span>
+<a name="l00004"></a>00004 <span class="comment"></span>
+<a name="l00005"></a>00005 <span class="comment">Direitos Autorais Reservados (c) 1989-2007 USP/Laboratorio Intermidia</span>
+<a name="l00006"></a>00006 <span class="comment"></span>
+<a name="l00007"></a>00007 <span class="comment">Este programa eh software livre; voce pode redistribui-lo e/ou modificah-lo sob</span>
+<a name="l00008"></a>00008 <span class="comment">os termos da Licenca Publica Geral GNU versao 2 conforme publicada pela Free</span>
+<a name="l00009"></a>00009 <span class="comment">Software Foundation.</span>
+<a name="l00010"></a>00010 <span class="comment"></span>
+<a name="l00011"></a>00011 <span class="comment">Este programa eh distribuido na expectativa de que seja util, porem, SEM</span>
+<a name="l00012"></a>00012 <span class="comment">NENHUMA GARANTIA; nem mesmo a garantia implicita de COMERCIABILIDADE OU</span>
+<a name="l00013"></a>00013 <span class="comment">ADEQUACAO A UMA FINALIDADE ESPECIFICA. Consulte a Licenca Publica Geral do</span>
+<a name="l00014"></a>00014 <span class="comment">GNU versao 2 para mais detalhes.</span>
+<a name="l00015"></a>00015 <span class="comment"></span>
+<a name="l00016"></a>00016 <span class="comment">Voce deve ter recebido uma copia da Licenca Publica Geral do GNU versao 2 junto</span>
+<a name="l00017"></a>00017 <span class="comment">com este programa; se nao, escreva para a Free Software Foundation, Inc., no</span>
+<a name="l00018"></a>00018 <span class="comment">endereco 59 Temple Street, Suite 330, Boston, MA 02111-1307 USA.</span>
+<a name="l00019"></a>00019 <span class="comment"></span>
+<a name="l00020"></a>00020 <span class="comment">Para maiores informacoes:</span>
+<a name="l00021"></a>00021 <span class="comment">http://www.ncl.org.br</span>
+<a name="l00022"></a>00022 <span class="comment">http://www.ginga.org.br</span>
+<a name="l00023"></a>00023 <span class="comment">http://agua.intermidia.icmc.usp.br/intermidia</span>
+<a name="l00024"></a>00024 <span class="comment"> ******************************************************************************</span>
+<a name="l00025"></a>00025 <span class="comment">This file is part of the declarative environment of middleware Ginga (Ginga-NCL)</span>
+<a name="l00026"></a>00026 <span class="comment"></span>
+<a name="l00027"></a>00027 <span class="comment">Copyright: 1989-2007 USP/LABORATORIO INTERMIDIA, All Rights Reserved.</span>
+<a name="l00028"></a>00028 <span class="comment"></span>
+<a name="l00029"></a>00029 <span class="comment">This program is free software; you can redistribute it and/or modify it under</span>
+<a name="l00030"></a>00030 <span class="comment">the terms of the GNU General Public License version 2 as published by</span>
+<a name="l00031"></a>00031 <span class="comment">the Free Software Foundation.</span>
+<a name="l00032"></a>00032 <span class="comment"></span>
+<a name="l00033"></a>00033 <span class="comment">This program is distributed in the hope that it will be useful, but WITHOUT ANY</span>
+<a name="l00034"></a>00034 <span class="comment">WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A</span>
+<a name="l00035"></a>00035 <span class="comment">PARTICULAR PURPOSE.  See the GNU General Public License version 2 for more</span>
+<a name="l00036"></a>00036 <span class="comment">details.</span>
+<a name="l00037"></a>00037 <span class="comment"></span>
+<a name="l00038"></a>00038 <span class="comment">You should have received a copy of the GNU General Public License version 2</span>
+<a name="l00039"></a>00039 <span class="comment">along with this program; if not, write to the Free Software</span>
+<a name="l00040"></a>00040 <span class="comment">Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA</span>
+<a name="l00041"></a>00041 <span class="comment"></span>
+<a name="l00042"></a>00042 <span class="comment">For further information contact:</span>
+<a name="l00043"></a>00043 <span class="comment">Maria da Graça Pimentel - mgp@icmc.usp.br</span>
+<a name="l00044"></a>00044 <span class="comment">http://www.ncl.org.br</span>
+<a name="l00045"></a>00045 <span class="comment">http://www.ginga.org.br</span>
+<a name="l00046"></a>00046 <span class="comment">http://agua.intermidia.icmc.usp.br/intermidia</span>
+<a name="l00047"></a>00047 <span class="comment"> *******************************************************************************/</span>
+<a name="l00048"></a>00048 
+<a name="l00057"></a>00057 <span class="preprocessor">#ifndef FILESHARECLIENTE_H</span>
+<a name="l00058"></a>00058 <span class="preprocessor"></span><span class="preprocessor">#define FILESHARECLIENTE_H</span>
+<a name="l00059"></a>00059 <span class="preprocessor"></span>
+<a name="l00060"></a>00060 <span class="preprocessor">#include &lt;talk/session/fileshare/fileshare.h&gt;</span>   <span class="comment">// Para cricket::FileShareManifest</span>
+<a name="l00061"></a>00061 <span class="preprocessor">#include &lt;talk/examples/login/status.h&gt;</span>                 <span class="comment">// Para buzz::Status</span>
+<a name="l00062"></a>00062 <span class="preprocessor">#include &lt;talk/xmpp/jid.h&gt;</span>                                              <span class="comment">// Para buzz::Jid</span>
+<a name="l00063"></a>00063 
+<a name="l00064"></a>00064 <span class="preprocessor">#include &lt;linceutil/LoggerUtil.h&gt;</span>
+<a name="l00065"></a>00065 <span class="keyword">using namespace </span>::br::ufscar::lince::util;
+<a name="l00066"></a>00066 
+<a name="l00067"></a>00067 <span class="keyword">namespace </span>br {
+<a name="l00068"></a>00068 <span class="keyword">namespace </span>usp {
+<a name="l00069"></a>00069 <span class="keyword">namespace </span>icmc {
+<a name="l00070"></a>00070 <span class="keyword">namespace </span>intermidia {
+<a name="l00071"></a>00071 <span class="keyword">namespace </span>ginga {
+<a name="l00072"></a>00072 <span class="keyword">namespace </span>core {
+<a name="l00073"></a>00073 <span class="keyword">namespace </span>p2p {
+<a name="l00074"></a>00074 
+<a name="l00075"></a>00075 <span class="comment">// Faço essa declaração aqui em vez de fazer um include para evitar include</span>
+<a name="l00076"></a>00076 <span class="comment">// cíclicos.</span>
+<a name="l00077"></a>00077 <span class="keyword">class </span>IP2PEventListener;
+<a name="l00078"></a>00078 
+<a name="l00082"></a><a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient.html">00082</a> <span class="keyword">class </span><a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient.html">FileShareClient</a> : <span class="keyword">public</span> sigslot::has_slots&lt;&gt;,
+<a name="l00083"></a>00083 <span class="keyword">public</span> talk_base::MessageHandler {
+<a name="l00084"></a>00084 <span class="keyword">public</span>:
+<a name="l00085"></a><a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient.html#a8107d8473b5b423f212ffa238e230894">00085</a>         <span class="keyword">enum</span> <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient.html#a8107d8473b5b423f212ffa238e230894">State</a> {
+<a name="l00086"></a><a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient.html#a8107d8473b5b423f212ffa238e230894add74e92b9f133b492dba78c528f10161">00086</a>                 <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient.html#a8107d8473b5b423f212ffa238e230894add74e92b9f133b492dba78c528f10161">OFFER</a>                   = 0, 
+<a name="l00087"></a><a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient.html#a8107d8473b5b423f212ffa238e230894a9523203e14bfb4cc1ea7bb403d05f59d">00087</a>                 <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient.html#a8107d8473b5b423f212ffa238e230894a9523203e14bfb4cc1ea7bb403d05f59d">TRANSFER</a>                = 1, 
+<a name="l00088"></a><a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient.html#a8107d8473b5b423f212ffa238e230894a5b6aeb6180356da800dd5d8cac896114">00088</a>                 <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient.html#a8107d8473b5b423f212ffa238e230894a5b6aeb6180356da800dd5d8cac896114">COMPLETE</a>                = 2, 
+<a name="l00089"></a><a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient.html#a8107d8473b5b423f212ffa238e230894ac7920ab10b5d25799da57c7d391f8bfc">00089</a>                 <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient.html#a8107d8473b5b423f212ffa238e230894ac7920ab10b5d25799da57c7d391f8bfc">LOCAL_CANCEL</a>    = 3, 
+<a name="l00090"></a><a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient.html#a8107d8473b5b423f212ffa238e230894a083d96a14e3d98e812e2cd3f5308d165">00090</a>                 <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient.html#a8107d8473b5b423f212ffa238e230894a083d96a14e3d98e812e2cd3f5308d165">REMOTE_CANCEL</a>   = 4, 
+<a name="l00091"></a><a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient.html#a8107d8473b5b423f212ffa238e230894a78d4266954c1a008e7859d21faff3314">00091</a>                 <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient.html#a8107d8473b5b423f212ffa238e230894a78d4266954c1a008e7859d21faff3314">FAILURE</a>                 = 5, 
+<a name="l00092"></a>00092         };
+<a name="l00093"></a>00093 
+<a name="l00094"></a>00094 <span class="keyword">private</span>:
+<a name="l00095"></a>00095         talk_base::scoped_ptr&lt;cricket::FileShareSessionClient&gt;
+<a name="l00096"></a>00096                         file_share_session_client_;
+<a name="l00097"></a>00097         buzz::Jid send_to_jid_;
+<a name="l00098"></a>00098         <span class="keyword">const</span> cricket::FileShareManifest *manifest_;
+<a name="l00099"></a>00099         cricket::FileShareSession *session_;
+<a name="l00100"></a>00100         std::string root_dir_;
+<a name="l00101"></a>00101 
+<a name="l00103"></a>00103         <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PEventListener.html">IP2PEventListener</a>* listener;
+<a name="l00104"></a>00104 
+<a name="l00106"></a>00106         HLoggerPtr logger;
+<a name="l00107"></a>00107 
+<a name="l00108"></a>00108         <span class="keywordtype">void</span> OnMessage(talk_base::Message *m);
+<a name="l00109"></a>00109 
+<a name="l00110"></a>00110         std::string filesizeToString(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> size);
+<a name="l00111"></a>00111 
+<a name="l00112"></a>00112         <span class="keywordtype">void</span> OnSessionState(cricket::FileShareState state);
+<a name="l00113"></a>00113 
+<a name="l00114"></a>00114         <span class="keywordtype">void</span> OnUpdateProgress(cricket::FileShareSession *sess);
+<a name="l00115"></a>00115 
+<a name="l00116"></a>00116         <span class="keywordtype">void</span> OnResampleImage(std::string path, <span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height,
+<a name="l00117"></a>00117                         talk_base::HttpTransaction *trans);
+<a name="l00118"></a>00118 
+<a name="l00119"></a>00119         <span class="keywordtype">void</span> OnFileShareSessionCreate(cricket::FileShareSession *sess);
+<a name="l00120"></a>00120 
+<a name="l00121"></a>00121         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> getDirSize(<span class="keyword">const</span> <span class="keywordtype">char</span> *directory);
+<a name="l00122"></a>00122 
+<a name="l00123"></a>00123 
+<a name="l00124"></a>00124 <span class="keyword">public</span>:
+<a name="l00131"></a>00131         <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient.html#a91d30e909ab8c51c53d1451d4b7dfcef">FileShareClient</a>(std::string root_dir);
+<a name="l00132"></a>00132 
+<a name="l00136"></a>00136         <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient.html#a92af93ef3499961dbe6b6e45ac6b0b5c">~FileShareClient</a>();
+<a name="l00137"></a>00137 
+<a name="l00146"></a>00146         <span class="keywordtype">void</span> <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient.html#a89bea2344d930cfc0e0149630136e18d">setListener</a>(<a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PEventListener.html">IP2PEventListener</a>* listener);
+<a name="l00147"></a>00147 
+<a name="l00154"></a>00154         <span class="keywordtype">void</span> <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient.html#a7cca6557f5606ee125481b317c6a70d3">setStatus</a>(buzz::Status::Show show, <span class="keywordtype">string</span> message);
+<a name="l00155"></a>00155 
+<a name="l00163"></a>00163         <span class="keywordtype">void</span> <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient.html#ae880077dd0b559a98eeb83fda410b7b2">sendFiles</a>(vector&lt;string&gt;* files, <span class="keyword">const</span> buzz::Jid &amp;send_to,
+<a name="l00164"></a>00164                         map&lt;string, buzz::Status&gt;* roster);
+<a name="l00165"></a>00165 
+<a name="l00173"></a>00173         <span class="keywordtype">void</span> <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient.html#acc096dd9ed0f906d22a3b168da216be2">onSignon</a>(cricket::SessionManager* session_manager,
+<a name="l00174"></a>00174                         <span class="keyword">const</span> buzz::Jid jid);
+<a name="l00175"></a>00175 
+<a name="l00183"></a>00183         <span class="keywordtype">void</span> <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient.html#aa216e2d67c19e22c6bd3a71315019bb9">onPossibleDestinationOnline</a>(<span class="keyword">const</span> buzz::Status &amp;status);
+<a name="l00184"></a>00184 
+<a name="l00189"></a>00189         <span class="keyword">enum</span> {
+<a name="l00190"></a>00190                 MSG_STOP,
+<a name="l00191"></a>00191                 MSG_DECLINE,
+<a name="l00192"></a>00192                 MSG_ACCEPT,
+<a name="l00193"></a>00193         };
+<a name="l00194"></a>00194 };
+<a name="l00195"></a>00195 
+<a name="l00196"></a>00196 }
+<a name="l00197"></a>00197 }
+<a name="l00198"></a>00198 }
+<a name="l00199"></a>00199 }
+<a name="l00200"></a>00200 }
+<a name="l00201"></a>00201 }
+<a name="l00202"></a>00202 }
+<a name="l00203"></a>00203 
+<a name="l00204"></a>00204 <span class="preprocessor">#endif </span><span class="comment">/*FILESHARECLIENTE_H*/</span>
+</pre></div></div>
+<hr class="footer"/><address style="text-align: right;"><small>Gerado em Wed Nov 17 16:35:47 2010 para Ginga-CC P2P por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

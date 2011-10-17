@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Ginga-CC P2P: Referência da Classe br::usp::icmc::intermidia::ginga::core::p2p::ChatTask</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Gerado por Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Página&nbsp;Principal</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Arquivos</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Lista&nbsp;de&nbsp;Componentes</span></a></li>
+      <li><a href="hierarchy.html"><span>Hierarquia&nbsp;de&nbsp;Classes</span></a></li>
+      <li><a href="functions.html"><span>Componentes&nbsp;Membros</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><b>br</b>::<b>usp</b>::<b>icmc</b>::<b>intermidia</b>::<b>ginga</b>::<b>core</b>::<b>p2p</b>::<a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1ChatTask.html">ChatTask</a>
+  </div>
+</div>
+<div class="contents">
+<h1>Referência da Classe br::usp::icmc::intermidia::ginga::core::p2p::ChatTask</h1><!-- doxytag: class="br::usp::icmc::intermidia::ginga::core::p2p::ChatTask" -->
+<p><code>#include &lt;<a class="el" href="ChatTask_8h_source.html">ChatTask.h</a>&gt;</code></p>
+
+<p><a href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1ChatTask-members.html">Lista de todos os Membros.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Métodos Públicos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1ChatTask.html#abcf6614965be5ae7204d4f57c09fdb05">ChatTask</a> (talk_base::Task *parent)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1ChatTask.html#a142f2a4487d0e8cd87873f1837bc996c">~ChatTask</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1ChatTask.html#a08f15eb0a25da642c5444ebff761e190">sendChatMessage</a> (buzz::Jid *sendToJid, const string &amp;text)</td></tr>
+<tr><td colspan="2"><h2>Atributos Públicos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">sigslot::signal2&lt; buzz::Jid, <br class="typebreak"/>
+const string &amp; &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1ChatTask.html#aadea820b55f7ff1ed5a75ea416369c30">SignalIncomingChat</a></td></tr>
+<tr><td colspan="2"><h2>Métodos Protegidos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0c62b48a707d1f844e9c50f5e8865a58"></a><!-- doxytag: member="br::usp::icmc::intermidia::ginga::core::p2p::ChatTask::ProcessStart" ref="a0c62b48a707d1f844e9c50f5e8865a58" args="()" -->
+virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><b>ProcessStart</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae3fcb7b611b6cc69ec0852bbc593381a"></a><!-- doxytag: member="br::usp::icmc::intermidia::ginga::core::p2p::ChatTask::HandleStanza" ref="ae3fcb7b611b6cc69ec0852bbc593381a" args="(const buzz::XmlElement *stanza)" -->
+virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>HandleStanza</b> (const buzz::XmlElement *stanza)</td></tr>
+<tr><td colspan="2"><h2>Atributos Protegidos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a05fc7c4045c19a95b582fa4d5b82c011"></a><!-- doxytag: member="br::usp::icmc::intermidia::ginga::core::p2p::ChatTask::logger" ref="a05fc7c4045c19a95b582fa4d5b82c011" args="" -->
+HLoggerPtr&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1ChatTask.html#a05fc7c4045c19a95b582fa4d5b82c011">logger</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Componente auxiliar para realização de logs. <br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Descrição Detalhada</h2>
+<p>Esta classe foi inspirada na classe de mesmo nome do projeto gtalX (<a href="http://sites.google.com/site/jozsefbekes/Home/gtalx">http://sites.google.com/site/jozsefbekes/Home/gtalx</a>)</p>
+<p>Tem como finalidade permitir o envio e recebimento de mensagens de texto. </p>
+<hr/><h2>Construtores &amp; Destrutores</h2>
+<a class="anchor" id="abcf6614965be5ae7204d4f57c09fdb05"></a><!-- doxytag: member="br::usp::icmc::intermidia::ginga::core::p2p::ChatTask::ChatTask" ref="abcf6614965be5ae7204d4f57c09fdb05" args="(talk_base::Task *parent)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">br::usp::icmc::intermidia::ginga::core::p2p::ChatTask::ChatTask </td>
+          <td>(</td>
+          <td class="paramtype">talk_base::Task *&nbsp;</td>
+          <td class="paramname"> <em>parent</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Construtor da Task responsável pelo chat.</p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>parent</em>&nbsp;</td><td>Task pai. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Referências <a class="el" href="ChatTask_8h_source.html#l00083">logger</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a142f2a4487d0e8cd87873f1837bc996c"></a><!-- doxytag: member="br::usp::icmc::intermidia::ginga::core::p2p::ChatTask::~ChatTask" ref="a142f2a4487d0e8cd87873f1837bc996c" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">br::usp::icmc::intermidia::ginga::core::p2p::ChatTask::~ChatTask </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Destrutor da Task responsável pelo chat. </p>
+
+<p>Referências <a class="el" href="ChatTask_8h_source.html#l00083">logger</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Métodos</h2>
+<a class="anchor" id="a08f15eb0a25da642c5444ebff761e190"></a><!-- doxytag: member="br::usp::icmc::intermidia::ginga::core::p2p::ChatTask::sendChatMessage" ref="a08f15eb0a25da642c5444ebff761e190" args="(buzz::Jid *sendToJid, const string &amp;text)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void br::usp::icmc::intermidia::ginga::core::p2p::ChatTask::sendChatMessage </td>
+          <td>(</td>
+          <td class="paramtype">buzz::Jid *&nbsp;</td>
+          <td class="paramname"> <em>sendToJid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string &amp;&nbsp;</td>
+          <td class="paramname"> <em>text</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Envia uma mensagem de texto para um determinado amigo.</p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>sendToJid</em>&nbsp;</td><td>Amigo que irá receber a mensagem </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>text</em>&nbsp;</td><td>Mensagem a ser enviada </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Referências <a class="el" href="ChatTask_8h_source.html#l00083">logger</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Atributos</h2>
+<a class="anchor" id="aadea820b55f7ff1ed5a75ea416369c30"></a><!-- doxytag: member="br::usp::icmc::intermidia::ginga::core::p2p::ChatTask::SignalIncomingChat" ref="aadea820b55f7ff1ed5a75ea416369c30" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sigslot::signal2&lt;buzz::Jid , const string&amp; &gt; <a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1ChatTask.html#aadea820b55f7ff1ed5a75ea416369c30">br::usp::icmc::intermidia::ginga::core::p2p::ChatTask::SignalIncomingChat</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Slot pelo qual serão notificadas ocorrências de recebimento mensagens de texto. </p>
+
+</div>
+</div>
+<hr/>A documentação para esta classe foi gerada a partir dos seguintes arquivos:<ul>
+<li>include/<a class="el" href="ChatTask_8h_source.html">ChatTask.h</a></li>
+<li>src/ChatTask.cpp</li>
+</ul>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>Gerado em Wed Nov 17 16:35:47 2010 para Ginga-CC P2P por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

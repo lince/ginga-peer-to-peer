@@ -1,0 +1,89 @@
+\section{Referência da Classe br::usp::icmc::intermidia::ginga::core::p2p::ChatTask}
+\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1ChatTask}\index{br::usp::icmc::intermidia::ginga::core::p2p::ChatTask@{br::usp::icmc::intermidia::ginga::core::p2p::ChatTask}}
+
+
+{\ttfamily \#include $<$ChatTask.h$>$}
+
+\subsection*{Métodos Públicos}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ChatTask} (talk\_\-base::Task $\ast$parent)
+\item 
+virtual {\bf $\sim$ChatTask} ()
+\item 
+void {\bf sendChatMessage} (buzz::Jid $\ast$sendToJid, const string \&text)
+\end{DoxyCompactItemize}
+\subsection*{Atributos Públicos}
+\begin{DoxyCompactItemize}
+\item 
+sigslot::signal2$<$ buzz::Jid, const string \& $>$ {\bf SignalIncomingChat}
+\end{DoxyCompactItemize}
+\subsection*{Métodos Protegidos}
+\begin{DoxyCompactItemize}
+\item 
+virtual int {\bfseries ProcessStart} ()\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1ChatTask_a0c62b48a707d1f844e9c50f5e8865a58}
+
+\item 
+virtual bool {\bfseries HandleStanza} (const buzz::XmlElement $\ast$stanza)\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1ChatTask_ae3fcb7b611b6cc69ec0852bbc593381a}
+
+\end{DoxyCompactItemize}
+\subsection*{Atributos Protegidos}
+\begin{DoxyCompactItemize}
+\item 
+HLoggerPtr {\bf logger}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1ChatTask_a05fc7c4045c19a95b582fa4d5b82c011}
+
+\begin{DoxyCompactList}\small\item\em Componente auxiliar para realização de logs. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descrição Detalhada}
+Esta classe foi inspirada na classe de mesmo nome do projeto gtalX ({\tt http://sites.google.com/site/jozsefbekes/Home/gtalx})
+
+Tem como finalidade permitir o envio e recebimento de mensagens de texto. 
+
+\subsection{Construtores \& Destrutores}
+\index{br::usp::icmc::intermidia::ginga::core::p2p::ChatTask@{br::usp::icmc::intermidia::ginga::core::p2p::ChatTask}!ChatTask@{ChatTask}}
+\index{ChatTask@{ChatTask}!br::usp::icmc::intermidia::ginga::core::p2p::ChatTask@{br::usp::icmc::intermidia::ginga::core::p2p::ChatTask}}
+\subsubsection[{ChatTask}]{\setlength{\rightskip}{0pt plus 5cm}br::usp::icmc::intermidia::ginga::core::p2p::ChatTask::ChatTask (talk\_\-base::Task $\ast$ {\em parent})}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1ChatTask_abcf6614965be5ae7204d4f57c09fdb05}
+Construtor da Task responsável pelo chat.
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em parent}]Task pai. \end{DoxyParams}
+
+
+Referências logger.
+
+\index{br::usp::icmc::intermidia::ginga::core::p2p::ChatTask@{br::usp::icmc::intermidia::ginga::core::p2p::ChatTask}!$\sim$ChatTask@{$\sim$ChatTask}}
+\index{$\sim$ChatTask@{$\sim$ChatTask}!br::usp::icmc::intermidia::ginga::core::p2p::ChatTask@{br::usp::icmc::intermidia::ginga::core::p2p::ChatTask}}
+\subsubsection[{$\sim$ChatTask}]{\setlength{\rightskip}{0pt plus 5cm}br::usp::icmc::intermidia::ginga::core::p2p::ChatTask::$\sim$ChatTask ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1ChatTask_a142f2a4487d0e8cd87873f1837bc996c}
+Destrutor da Task responsável pelo chat. 
+
+Referências logger.
+
+
+
+\subsection{Métodos}
+\index{br::usp::icmc::intermidia::ginga::core::p2p::ChatTask@{br::usp::icmc::intermidia::ginga::core::p2p::ChatTask}!sendChatMessage@{sendChatMessage}}
+\index{sendChatMessage@{sendChatMessage}!br::usp::icmc::intermidia::ginga::core::p2p::ChatTask@{br::usp::icmc::intermidia::ginga::core::p2p::ChatTask}}
+\subsubsection[{sendChatMessage}]{\setlength{\rightskip}{0pt plus 5cm}void br::usp::icmc::intermidia::ginga::core::p2p::ChatTask::sendChatMessage (buzz::Jid $\ast$ {\em sendToJid}, \/  const string \& {\em text})}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1ChatTask_a08f15eb0a25da642c5444ebff761e190}
+Envia uma mensagem de texto para um determinado amigo.
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em sendToJid}]Amigo que irá receber a mensagem \item[{\em text}]Mensagem a ser enviada \end{DoxyParams}
+
+
+Referências logger.
+
+
+
+\subsection{Atributos}
+\index{br::usp::icmc::intermidia::ginga::core::p2p::ChatTask@{br::usp::icmc::intermidia::ginga::core::p2p::ChatTask}!SignalIncomingChat@{SignalIncomingChat}}
+\index{SignalIncomingChat@{SignalIncomingChat}!br::usp::icmc::intermidia::ginga::core::p2p::ChatTask@{br::usp::icmc::intermidia::ginga::core::p2p::ChatTask}}
+\subsubsection[{SignalIncomingChat}]{\setlength{\rightskip}{0pt plus 5cm}sigslot::signal2$<$buzz::Jid , const string\& $>$ {\bf br::usp::icmc::intermidia::ginga::core::p2p::ChatTask::SignalIncomingChat}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1ChatTask_aadea820b55f7ff1ed5a75ea416369c30}
+Slot pelo qual serão notificadas ocorrências de recebimento mensagens de texto. 
+
+A documentação para esta classe foi gerada a partir dos seguintes arquivos:\begin{DoxyCompactItemize}
+\item 
+include/{\bf ChatTask.h}\item 
+src/ChatTask.cpp\end{DoxyCompactItemize}

@@ -1,0 +1,132 @@
+\section{Referência da Classe br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient}
+\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient}\index{br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient@{br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient}}
+
+
+{\ttfamily \#include $<$FileShareClient.h$>$}
+
+\subsection*{Tipos Públicos}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf State} \{ \par
+{\bf OFFER} =  0, 
+{\bf TRANSFER} =  1, 
+{\bf COMPLETE} =  2, 
+{\bf LOCAL\_\-CANCEL} =  3, 
+\par
+{\bf REMOTE\_\-CANCEL} =  4, 
+{\bf FAILURE} =  5
+ \}
+\item 
+enum \{ {\bfseries MSG\_\-STOP}, 
+{\bfseries MSG\_\-DECLINE}, 
+{\bfseries MSG\_\-ACCEPT}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Métodos Públicos}
+\begin{DoxyCompactItemize}
+\item 
+{\bf FileShareClient} (std::string root\_\-dir)
+\item 
+{\bf $\sim$FileShareClient} ()
+\item 
+void {\bf setListener} ({\bf IP2PEventListener} $\ast$listener)
+\item 
+void {\bf setStatus} (buzz::Status::Show show, string message)
+\item 
+void {\bf sendFiles} (vector$<$ string $>$ $\ast$files, const buzz::Jid \&send\_\-to, map$<$ string, buzz::Status $>$ $\ast$roster)
+\item 
+void {\bf onSignon} (cricket::SessionManager $\ast$session\_\-manager, const buzz::Jid jid)
+\item 
+void {\bf onPossibleDestinationOnline} (const buzz::Status \&status)
+\end{DoxyCompactItemize}
+
+
+\subsection{Descrição Detalhada}
+Classe responsável pela troca de arquivos entre clientes XMPP. 
+
+\subsection{Enumerações}
+\subsubsection[{"@0}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient_a4e681ca7516e609028da94b3476ca412}
+Possíveis valores para mensagens a serem trocadas entre threads através da MessageQueue. \index{br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient@{br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient}!State@{State}}
+\index{State@{State}!br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient@{br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient}}
+\subsubsection[{State}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient::State}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient_a8107d8473b5b423f212ffa238e230894}
+\begin{Desc}
+\item[Valores enumerados: ]\par
+\begin{description}
+\index{OFFER@{OFFER}!br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient@{br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient}}\index{br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient@{br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient}!OFFER@{OFFER}}\item[{\em 
+OFFER\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient_a8107d8473b5b423f212ffa238e230894add74e92b9f133b492dba78c528f10161}
+}]Alguem está lhe oferecendo arquivos (acompanha um manifesto). \index{TRANSFER@{TRANSFER}!br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient@{br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient}}\index{br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient@{br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient}!TRANSFER@{TRANSFER}}\item[{\em 
+TRANSFER\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient_a8107d8473b5b423f212ffa238e230894a9523203e14bfb4cc1ea7bb403d05f59d}
+}]Tranferência iniciada. \index{COMPLETE@{COMPLETE}!br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient@{br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient}}\index{br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient@{br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient}!COMPLETE@{COMPLETE}}\item[{\em 
+COMPLETE\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient_a8107d8473b5b423f212ffa238e230894a5b6aeb6180356da800dd5d8cac896114}
+}]Transferência completada. \index{LOCAL\_\-CANCEL@{LOCAL\_\-CANCEL}!br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient@{br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient}}\index{br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient@{br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient}!LOCAL\_\-CANCEL@{LOCAL\_\-CANCEL}}\item[{\em 
+LOCAL\_\-CANCEL\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient_a8107d8473b5b423f212ffa238e230894ac7920ab10b5d25799da57c7d391f8bfc}
+}]Transferência cancelada localmente. \index{REMOTE\_\-CANCEL@{REMOTE\_\-CANCEL}!br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient@{br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient}}\index{br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient@{br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient}!REMOTE\_\-CANCEL@{REMOTE\_\-CANCEL}}\item[{\em 
+REMOTE\_\-CANCEL\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient_a8107d8473b5b423f212ffa238e230894a083d96a14e3d98e812e2cd3f5308d165}
+}]Transferência cancelada remotamente. \index{FAILURE@{FAILURE}!br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient@{br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient}}\index{br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient@{br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient}!FAILURE@{FAILURE}}\item[{\em 
+FAILURE\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient_a8107d8473b5b423f212ffa238e230894a78d4266954c1a008e7859d21faff3314}
+}]Falha durante transferência. \end{description}
+\end{Desc}
+
+
+
+\subsection{Construtores \& Destrutores}
+\index{br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient@{br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient}!FileShareClient@{FileShareClient}}
+\index{FileShareClient@{FileShareClient}!br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient@{br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient}}
+\subsubsection[{FileShareClient}]{\setlength{\rightskip}{0pt plus 5cm}br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient::FileShareClient (std::string {\em root\_\-dir})}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient_a91d30e909ab8c51c53d1451d4b7dfcef}
+Constrói um objeto \doxyref{FileShareClient}{pag.}{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient} já passando tudo que é necessário para realizar uma conexão.
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em root\_\-dir}]Diretório onde os arquivos serão procurados ou escritos. \end{DoxyParams}
+\index{br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient@{br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient}!$\sim$FileShareClient@{$\sim$FileShareClient}}
+\index{$\sim$FileShareClient@{$\sim$FileShareClient}!br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient@{br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient}}
+\subsubsection[{$\sim$FileShareClient}]{\setlength{\rightskip}{0pt plus 5cm}br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient::$\sim$FileShareClient ()}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient_a92af93ef3499961dbe6b6e45ac6b0b5c}
+Destrói um objeto \doxyref{FileShareClient}{pag.}{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient}. 
+
+\subsection{Métodos}
+\index{br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient@{br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient}!onPossibleDestinationOnline@{onPossibleDestinationOnline}}
+\index{onPossibleDestinationOnline@{onPossibleDestinationOnline}!br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient@{br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient}}
+\subsubsection[{onPossibleDestinationOnline}]{\setlength{\rightskip}{0pt plus 5cm}void br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient::onPossibleDestinationOnline (const buzz::Status \& {\em status})}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient_aa216e2d67c19e22c6bd3a71315019bb9}
+Método chamado quando algum usuário fica online, para que esta classe possa checar se existe algum item que está pendente para ser enviado para esse usuário.
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em status}]Informações sobre o usuário que ficou online. \end{DoxyParams}
+\index{br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient@{br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient}!onSignon@{onSignon}}
+\index{onSignon@{onSignon}!br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient@{br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient}}
+\subsubsection[{onSignon}]{\setlength{\rightskip}{0pt plus 5cm}void br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient::onSignon (cricket::SessionManager $\ast$ {\em session\_\-manager}, \/  const buzz::Jid {\em jid})}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient_acc096dd9ed0f906d22a3b168da216be2}
+Método chamado depois que uma conexão é estabelecida. Envia informação de presença e se registra para receber notificações de presença de outros.
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em session\_\-manager}]O gerenciador da sessão atual. \item[{\em jid}]O endereço XMPP do usuário. \end{DoxyParams}
+\index{br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient@{br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient}!sendFiles@{sendFiles}}
+\index{sendFiles@{sendFiles}!br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient@{br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient}}
+\subsubsection[{sendFiles}]{\setlength{\rightskip}{0pt plus 5cm}void br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient::sendFiles (vector$<$ string $>$ $\ast$ {\em files}, \/  const buzz::Jid \& {\em send\_\-to}, \/  map$<$ string, buzz::Status $>$ $\ast$ {\em roster})}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient_ae880077dd0b559a98eeb83fda410b7b2}
+Envia arquivos e diretórios para um determinado amigo.
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em files}]Vetor contendo os caminhos dos arquivos e diretórios que serão enviados \item[{\em jid}]Identificador o amigo que irá receber os arquivos \end{DoxyParams}
+\index{br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient@{br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient}!setListener@{setListener}}
+\index{setListener@{setListener}!br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient@{br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient}}
+\subsubsection[{setListener}]{\setlength{\rightskip}{0pt plus 5cm}void br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient::setListener ({\bf IP2PEventListener} $\ast$ {\em listener})}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient_a89bea2344d930cfc0e0149630136e18d}
+Permite setar o objeto responsável por tratar mudanças de estado relacionadas a trasnferência de arquivos e pastas, inclusive o recebimento de oferecimento de um item.
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em listener}]Observador que será notificado quando ocorrer qualquer mudança de estado relacionada a transferência de algum arquivo. \end{DoxyParams}
+\index{br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient@{br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient}!setStatus@{setStatus}}
+\index{setStatus@{setStatus}!br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient@{br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient}}
+\subsubsection[{setStatus}]{\setlength{\rightskip}{0pt plus 5cm}void br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient::setStatus (buzz::Status::Show {\em show}, \/  string {\em message})}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient_a7cca6557f5606ee125481b317c6a70d3}
+Permite definir o próprio status.
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em show}]Status a ser utilizado. \item[{\em message}]Mensagem personalizada opcional. \end{DoxyParams}
+
+
+A documentação para esta classe foi gerada a partir dos seguintes arquivos:\begin{DoxyCompactItemize}
+\item 
+include/{\bf FileShareClient.h}\item 
+src/{\bf FileShareClient.cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Ginga-CC P2P: Código-Fonte de include/IP2PManager.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Gerado por Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Página&nbsp;Principal</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Arquivos</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>Lista&nbsp;de&nbsp;Arquivos</span></a></li>
+    </ul>
+  </div>
+<h1>include/IP2PManager.h</h1><a href="IP2PManager_8h.html">Vá para a documentação deste arquivo.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/******************************************************************************</span>
+<a name="l00002"></a>00002 <span class="comment">Este arquivo eh parte da implementacao do ambiente declarativo do middleware</span>
+<a name="l00003"></a>00003 <span class="comment">Ginga (Ginga-NCL).</span>
+<a name="l00004"></a>00004 <span class="comment"></span>
+<a name="l00005"></a>00005 <span class="comment">Direitos Autorais Reservados (c) 1989-2007 USP/Laboratorio Intermidia</span>
+<a name="l00006"></a>00006 <span class="comment"></span>
+<a name="l00007"></a>00007 <span class="comment">Este programa eh software livre; voce pode redistribui-lo e/ou modificah-lo sob</span>
+<a name="l00008"></a>00008 <span class="comment">os termos da Licenca Publica Geral GNU versao 2 conforme publicada pela Free</span>
+<a name="l00009"></a>00009 <span class="comment">Software Foundation.</span>
+<a name="l00010"></a>00010 <span class="comment"></span>
+<a name="l00011"></a>00011 <span class="comment">Este programa eh distribuido na expectativa de que seja util, porem, SEM</span>
+<a name="l00012"></a>00012 <span class="comment">NENHUMA GARANTIA; nem mesmo a garantia implicita de COMERCIABILIDADE OU</span>
+<a name="l00013"></a>00013 <span class="comment">ADEQUACAO A UMA FINALIDADE ESPECIFICA. Consulte a Licenca Publica Geral do</span>
+<a name="l00014"></a>00014 <span class="comment">GNU versao 2 para mais detalhes.</span>
+<a name="l00015"></a>00015 <span class="comment"></span>
+<a name="l00016"></a>00016 <span class="comment">Voce deve ter recebido uma copia da Licenca Publica Geral do GNU versao 2 junto</span>
+<a name="l00017"></a>00017 <span class="comment">com este programa; se nao, escreva para a Free Software Foundation, Inc., no</span>
+<a name="l00018"></a>00018 <span class="comment">endereco 59 Temple Street, Suite 330, Boston, MA 02111-1307 USA.</span>
+<a name="l00019"></a>00019 <span class="comment"></span>
+<a name="l00020"></a>00020 <span class="comment">Para maiores informacoes:</span>
+<a name="l00021"></a>00021 <span class="comment">http://www.ncl.org.br</span>
+<a name="l00022"></a>00022 <span class="comment">http://www.ginga.org.br</span>
+<a name="l00023"></a>00023 <span class="comment">http://agua.intermidia.icmc.usp.br/intermidia</span>
+<a name="l00024"></a>00024 <span class="comment"> ******************************************************************************</span>
+<a name="l00025"></a>00025 <span class="comment">This file is part of the declarative environment of middleware Ginga (Ginga-NCL)</span>
+<a name="l00026"></a>00026 <span class="comment"></span>
+<a name="l00027"></a>00027 <span class="comment">Copyright: 1989-2007 USP/LABORATORIO INTERMIDIA, All Rights Reserved.</span>
+<a name="l00028"></a>00028 <span class="comment"></span>
+<a name="l00029"></a>00029 <span class="comment">This program is free software; you can redistribute it and/or modify it under</span>
+<a name="l00030"></a>00030 <span class="comment">the terms of the GNU General Public License version 2 as published by</span>
+<a name="l00031"></a>00031 <span class="comment">the Free Software Foundation.</span>
+<a name="l00032"></a>00032 <span class="comment"></span>
+<a name="l00033"></a>00033 <span class="comment">This program is distributed in the hope that it will be useful, but WITHOUT ANY</span>
+<a name="l00034"></a>00034 <span class="comment">WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A</span>
+<a name="l00035"></a>00035 <span class="comment">PARTICULAR PURPOSE.  See the GNU General Public License version 2 for more</span>
+<a name="l00036"></a>00036 <span class="comment">details.</span>
+<a name="l00037"></a>00037 <span class="comment"></span>
+<a name="l00038"></a>00038 <span class="comment">You should have received a copy of the GNU General Public License version 2</span>
+<a name="l00039"></a>00039 <span class="comment">along with this program; if not, write to the Free Software</span>
+<a name="l00040"></a>00040 <span class="comment">Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA</span>
+<a name="l00041"></a>00041 <span class="comment"></span>
+<a name="l00042"></a>00042 <span class="comment">For further information contact:</span>
+<a name="l00043"></a>00043 <span class="comment">Maria da Graça Pimentel - mgp@icmc.usp.br</span>
+<a name="l00044"></a>00044 <span class="comment">http://www.ncl.org.br</span>
+<a name="l00045"></a>00045 <span class="comment">http://www.ginga.org.br</span>
+<a name="l00046"></a>00046 <span class="comment">http://agua.intermidia.icmc.usp.br/intermidia</span>
+<a name="l00047"></a>00047 <span class="comment"> *******************************************************************************/</span>
+<a name="l00048"></a>00048 
+<a name="l00057"></a>00057 <span class="preprocessor">#ifndef IP2PMANAGER_H</span>
+<a name="l00058"></a>00058 <span class="preprocessor"></span><span class="preprocessor">#define IP2PMANAGER_H</span>
+<a name="l00059"></a>00059 <span class="preprocessor"></span>
+<a name="l00060"></a>00060 <span class="preprocessor">#include &lt;string&gt;</span>
+<a name="l00061"></a>00061 <span class="preprocessor">#include &lt;vector&gt;</span>
+<a name="l00062"></a>00062 <span class="keyword">using namespace </span>std;
+<a name="l00063"></a>00063 
+<a name="l00064"></a>00064 <span class="preprocessor">#include &quot;<a class="code" href="IP2PEventListener_8h.html">IP2PEventListener.h</a>&quot;</span>
+<a name="l00065"></a>00065 
+<a name="l00066"></a>00066 <span class="comment">// TODO Retirar esses includes daqui para não expor nessa interface nada</span>
+<a name="l00067"></a>00067 <span class="comment">// relacionado à libjingle.</span>
+<a name="l00068"></a>00068 <span class="preprocessor">#include &lt;talk/base/cryptstring.h&gt;</span>                              <span class="comment">// Para talk_base::InsecureCryptStringImpl</span>
+<a name="l00069"></a>00069 <span class="preprocessor">#include &lt;talk/examples/login/status.h&gt;</span>                 <span class="comment">// Para buzz::Status</span>
+<a name="l00070"></a><a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html">00070</a> 
+<a name="l00071"></a><a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#ae4b55c6c0a7f1613e5616de08914237e">00071</a> <span class="keyword">namespace </span>br {
+<a name="l00072"></a><a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#ae4b55c6c0a7f1613e5616de08914237eab09a6a91504ac9afe2b5ba380172135c">00072</a> <span class="keyword">namespace </span>usp {
+<a name="l00073"></a><a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#ae4b55c6c0a7f1613e5616de08914237ea7461c990afc006337f7afee3a6a9e188">00073</a> <span class="keyword">namespace </span>icmc {
+<a name="l00074"></a><a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#ae4b55c6c0a7f1613e5616de08914237ea63b825d6fe1c817d7efda9a8d7147532">00074</a> <span class="keyword">namespace </span>intermidia {
+<a name="l00075"></a><a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#ae4b55c6c0a7f1613e5616de08914237ea05723d382e712227f615f55123684ea0">00075</a> <span class="keyword">namespace </span>ginga {
+<a name="l00076"></a><a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#ae4b55c6c0a7f1613e5616de08914237eae7f30a061277349987d27d5785be55eb">00076</a> <span class="keyword">namespace </span>core {
+<a name="l00077"></a><a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#ae4b55c6c0a7f1613e5616de08914237ea637e72c86a809aed5430d4f554d4edfd">00077</a> <span class="keyword">namespace </span>p2p {
+<a name="l00078"></a><a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#ae4b55c6c0a7f1613e5616de08914237ea78f3642b5e139385a31bf83b14c3ce3d">00078</a> 
+<a name="l00082"></a>00082 <span class="keyword">class </span><a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html">IP2PManager</a> {
+<a name="l00083"></a>00083 <span class="keyword">public</span>:
+<a name="l00088"></a>00088         <span class="keyword">enum</span> <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#ae4b55c6c0a7f1613e5616de08914237e">Status</a> {
+<a name="l00089"></a>00089                 <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#ae4b55c6c0a7f1613e5616de08914237eab09a6a91504ac9afe2b5ba380172135c">NONE</a>     = 0, 
+<a name="l00090"></a>00090                 <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#ae4b55c6c0a7f1613e5616de08914237ea7461c990afc006337f7afee3a6a9e188">OFFLINE</a>  = 1, 
+<a name="l00091"></a>00091                 <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#ae4b55c6c0a7f1613e5616de08914237ea63b825d6fe1c817d7efda9a8d7147532">XA</a>       = 2, 
+<a name="l00092"></a>00092                 <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#ae4b55c6c0a7f1613e5616de08914237ea05723d382e712227f615f55123684ea0">AWAY</a>     = 3, 
+<a name="l00093"></a>00093                 <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#ae4b55c6c0a7f1613e5616de08914237eae7f30a061277349987d27d5785be55eb">DND</a>      = 4, 
+<a name="l00094"></a>00094                 <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#ae4b55c6c0a7f1613e5616de08914237ea637e72c86a809aed5430d4f554d4edfd">ONLINE</a>   = 5, 
+<a name="l00095"></a>00095                 <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#ae4b55c6c0a7f1613e5616de08914237ea78f3642b5e139385a31bf83b14c3ce3d">CHAT</a>     = 6, 
+<a name="l00096"></a>00096         };
+<a name="l00097"></a>00097 
+<a name="l00101"></a>00101         <span class="keyword">virtual</span> <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#a0601bca0990ec599cec1a5ed33cf9358">~IP2PManager</a>(){};
+<a name="l00102"></a>00102 
+<a name="l00115"></a>00115         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#a720d5e610e2018254d2ecc0237a9d4c4">connect</a>(<span class="keywordtype">string</span> server, <span class="keywordtype">int</span> port, <span class="keywordtype">string</span> username,
+<a name="l00116"></a>00116                         talk_base::InsecureCryptStringImpl pass,
+<a name="l00117"></a>00117                         <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PEventListener.html">IP2PEventListener</a>* listener = NULL) = 0;
+<a name="l00118"></a>00118 
+<a name="l00122"></a>00122         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#a48b9e24798125b0937abdb1577475991">disconnect</a>() = 0;
+<a name="l00123"></a>00123 
+<a name="l00131"></a>00131         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#a5d90e6289098fedff8131f6a31e6be18">sendFiles</a>(vector&lt;string&gt;* files, <span class="keywordtype">string</span> username) = 0;
+<a name="l00132"></a>00132 
+<a name="l00139"></a>00139         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#a780b05d26f8438b405cc176051ab31f4">sendFile</a>(<span class="keywordtype">string</span> file, <span class="keywordtype">string</span> username) = 0;
+<a name="l00140"></a>00140 
+<a name="l00147"></a>00147         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#a4de46a01e59fd8986ee7ccee739e49a1">sendChatMessage</a>(<span class="keywordtype">string</span> username, <span class="keywordtype">string</span> text) = 0;
+<a name="l00148"></a>00148 
+<a name="l00155"></a>00155         <span class="keyword">virtual</span> vector&lt;buzz::Status&gt;* <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#a45c81b565c3112b7d37328103f0918ab">getFriends</a>() = 0;
+<a name="l00156"></a>00156 
+<a name="l00163"></a>00163         <span class="keyword">virtual</span> map&lt;string, buzz::Status&gt;* <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#abfa3890264dd16b4b9d9eec28d13f69e">getFriendsMap</a>() = 0;
+<a name="l00164"></a>00164 
+<a name="l00172"></a>00172         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#adc2163d5ef7493c9d23f74a7fcdbb398">setStatus</a>(<a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#ae4b55c6c0a7f1613e5616de08914237e">Status</a> s, <span class="keywordtype">string</span> message) = 0;
+<a name="l00173"></a>00173 
+<a name="l00180"></a>00180         <span class="keyword">virtual</span> buzz::Status* <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#a3e566b2e50875009b254caeed5f374f9">getStatus</a>() = 0;
+<a name="l00181"></a>00181 
+<a name="l00185"></a>00185         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#a2dcaff706e7b9f04602de239b287906d">accept</a>() = 0;
+<a name="l00186"></a>00186 
+<a name="l00190"></a>00190         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#ac43a21a8308ca36d1143026bbca1a4a9">reject</a>() = 0;
+<a name="l00191"></a>00191 
+<a name="l00192"></a>00192 };
+<a name="l00193"></a>00193 }
+<a name="l00194"></a>00194 }
+<a name="l00195"></a>00195 }
+<a name="l00196"></a>00196 }
+<a name="l00197"></a>00197 }
+<a name="l00198"></a>00198 }
+<a name="l00199"></a>00199 }
+<a name="l00200"></a>00200 
+<a name="l00201"></a>00201 typedef ::br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager*
+<a name="l00202"></a>00202 P2PManagerCreator();
+<a name="l00203"></a>00203 
+<a name="l00204"></a>00204 <span class="keyword">typedef</span> <span class="keywordtype">void</span> P2PManagerDestroyer(
+<a name="l00205"></a>00205                 ::<a class="code" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html">br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager</a>* p2pm);
+<a name="l00206"></a>00206 
+<a name="l00207"></a>00207 <span class="preprocessor">#endif </span><span class="comment">/*IP2PMANAGER_H*/</span>
+</pre></div></div>
+<hr class="footer"/><address style="text-align: right;"><small>Gerado em Wed Nov 17 16:35:47 2010 para Ginga-CC P2P por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

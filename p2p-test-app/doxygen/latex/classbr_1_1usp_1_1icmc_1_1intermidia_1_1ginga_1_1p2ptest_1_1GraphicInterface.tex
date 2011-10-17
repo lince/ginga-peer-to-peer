@@ -1,0 +1,91 @@
+\section{Referência da Classe br::usp::icmc::intermidia::ginga::p2ptest::GraphicInterface}
+\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicInterface}\index{br::usp::icmc::intermidia::ginga::p2ptest::GraphicInterface@{br::usp::icmc::intermidia::ginga::p2ptest::GraphicInterface}}
+
+
+{\ttfamily \#include $<$GraphicInterface.h$>$}
+
+\subsection*{Métodos Públicos}
+\begin{DoxyCompactItemize}
+\item 
+{\bf GraphicInterface} (IColor $\ast$color)
+\item 
+{\bf $\sim$GraphicInterface} ()
+\item 
+void {\bfseries drawString} (int x, int y, const char $\ast$text)\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicInterface_a80c079ea2568cfbfb4eb6bc2739e87c7}
+
+\item 
+void {\bfseries fillRectangle} (int x, int y, int width, int height)\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicInterface_a95234a5644aed8a7f20b4ba034d6bb7f}
+
+\item 
+void {\bfseries drawLine} (int x1, int y1, int x2, int y2)\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicInterface_a7728845c7eacdf8fc4af11a8b44f0c99}
+
+\item 
+void {\bfseries drawImage} (int x, int y, string path)\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicInterface_a3d714c907bc18f49f5b1b2ba83c55c0d}
+
+\item 
+void {\bfseries show} ()\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicInterface_a6fe5d867183006840e3f51147251ce6a}
+
+\item 
+void {\bfseries clear} ()\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicInterface_ab40755c7ca7b5e034d3c6a75d7ba0b21}
+
+\item 
+bool {\bfseries setColor} (IColor $\ast$color)\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicInterface_a27df3106700e352a0cb3eb2cfb142e6e}
+
+\item 
+bool {\bfseries setFont} (string someUri, int fontSize)\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicInterface_a4fd6d1be1785ed77235a43350b9c8cb9}
+
+\end{DoxyCompactItemize}
+\subsection*{Métodos Protegidos}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf initializeWindow} ()
+\end{DoxyCompactItemize}
+\subsection*{Atributos Protegidos}
+\begin{DoxyCompactItemize}
+\item 
+HLoggerPtr {\bf logger}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicInterface_aa4f13dbe09bf9469deb61ebb85908bdd}
+
+\begin{DoxyCompactList}\small\item\em Componente auxiliar para realização de logs. \item\end{DoxyCompactList}\item 
+IWindow $\ast$ {\bfseries win}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicInterface_a99351d6159f5d15e14e40a4299b9aee4}
+
+\item 
+ISurface $\ast$ {\bfseries surface}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicInterface_ac5d7c432567b6574020574dacffee6c6}
+
+\item 
+IColor $\ast$ {\bfseries color}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicInterface_a4ef684ecb122f8cab61181c61b1dc6d0}
+
+\item 
+IColor $\ast$ {\bfseries bgColor}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicInterface_ae434e332d4fa3c698d359e0f6a563d1f}
+
+\item 
+IFontProvider $\ast$ {\bfseries font}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicInterface_a7eaa8531fc1243ea3c0136b390918e0e}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Descrição Detalhada}
+Classe responsável por mostrar texto, imagem e formas geométricas na tela. 
+
+\subsection{Construtores \& Destrutores}
+\index{br::usp::icmc::intermidia::ginga::p2ptest::GraphicInterface@{br::usp::icmc::intermidia::ginga::p2ptest::GraphicInterface}!GraphicInterface@{GraphicInterface}}
+\index{GraphicInterface@{GraphicInterface}!br::usp::icmc::intermidia::ginga::p2ptest::GraphicInterface@{br::usp::icmc::intermidia::ginga::p2ptest::GraphicInterface}}
+\subsubsection[{GraphicInterface}]{\setlength{\rightskip}{0pt plus 5cm}br::usp::icmc::intermidia::ginga::p2ptest::GraphicInterface::GraphicInterface (IColor $\ast$ {\em color})}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicInterface_a1f1d09880cf36d3ae97f2b0bf09ab6d2}
+Constrói um objeto \doxyref{GraphicInterface}{pag.}{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicInterface}. 
+
+Referências logger.
+
+\index{br::usp::icmc::intermidia::ginga::p2ptest::GraphicInterface@{br::usp::icmc::intermidia::ginga::p2ptest::GraphicInterface}!$\sim$GraphicInterface@{$\sim$GraphicInterface}}
+\index{$\sim$GraphicInterface@{$\sim$GraphicInterface}!br::usp::icmc::intermidia::ginga::p2ptest::GraphicInterface@{br::usp::icmc::intermidia::ginga::p2ptest::GraphicInterface}}
+\subsubsection[{$\sim$GraphicInterface}]{\setlength{\rightskip}{0pt plus 5cm}br::usp::icmc::intermidia::ginga::p2ptest::GraphicInterface::$\sim$GraphicInterface ()}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicInterface_a8fb9b9cacf3716b0807a9c07344c474f}
+Destói o objeto \doxyref{GraphicInterface}{pag.}{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicInterface}. 
+
+\subsection{Métodos}
+\index{br::usp::icmc::intermidia::ginga::p2ptest::GraphicInterface@{br::usp::icmc::intermidia::ginga::p2ptest::GraphicInterface}!initializeWindow@{initializeWindow}}
+\index{initializeWindow@{initializeWindow}!br::usp::icmc::intermidia::ginga::p2ptest::GraphicInterface@{br::usp::icmc::intermidia::ginga::p2ptest::GraphicInterface}}
+\subsubsection[{initializeWindow}]{\setlength{\rightskip}{0pt plus 5cm}void br::usp::icmc::intermidia::ginga::p2ptest::GraphicInterface::initializeWindow ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicInterface_abd61122f91a82e3c1b73dbacbc1d5c6c}
+Inicializa a janela que é usada para desenhar na tela. 
+
+A documentação para esta classe foi gerada a partir dos seguintes arquivos:\begin{DoxyCompactItemize}
+\item 
+include/{\bf GraphicInterface.h}\item 
+src/{\bf GraphicInterface.cpp}\end{DoxyCompactItemize}

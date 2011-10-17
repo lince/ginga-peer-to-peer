@@ -1,0 +1,27 @@
+Ginga Common Core Peer-to-Peer TODO List
+--------------------------------------------------------------------------------
+
+This is the TODO list for Ginga NCL Reference Implementation. If you want to 
+work on any of this, please send us a mail to ask about it first.
+ 
+It's likely that work is already started and we can give you more details on
+the particular issue.
+--------------------------------------------------------------------------------
+- Mudar o namespace para não conter o nome usp e intermídia e assim tornar o
+	componente mais geral e atrativo para ser usada por outras instituições?
+- Checar o uso do COMPSUPPORT
+- Fazer a checagem de dependências do configure.in funcionar
+- Atualizar arquivo LICENSING
+- Mudar o copyleft do fim do arquivo autogen.sh
+
+- Checar se mais de uma aplicação pode usar o componente P2P ao mesmo tempo.
+
+- Permitir mais de um listener de notificação de recebimento de arquivos e chat.
+
+- Permitir troca de arquivos com um cliente diferente do pcp e GTalk do Windows
+		(pidgin, por exemplo).
+	Não é nada trivial, provavelmente porque a versão da libjingle que estamos
+		usando não é compatível com o protocolo Jingle.
+	A solução pode ser esperar uma nova versão da libjingle.
+	A troca de arquivos só é possível no momento entre usuários Ginga e entre
+		usuário ginga e pcp.

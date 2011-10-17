@@ -1,0 +1,50 @@
+\documentclass[a4paper]{book}
+\usepackage{a4wide}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{textcomp}
+\usepackage{alltt}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{doxygen}
+\lstset{language=C++,inputencoding=utf8,basicstyle=\footnotesize,breaklines=true,breakatwhitespace=true,tabsize=8,numbers=left }
+\makeindex
+\setcounter{tocdepth}{3}
+\renewcommand{\footrulewidth}{0.4pt}
+\begin{document}
+\begin{titlepage}
+\vspace*{7cm}
+\begin{center}
+{\Large P2P Test App }\\
+\vspace*{1cm}
+{\large Gerado por Doxygen 1.6.3}\\
+\vspace*{0.5cm}
+{\small Wed Nov 17 16:38:28 2010}\\
+\end{center}
+\end{titlepage}
+\clearemptydoublepage
+\pagenumbering{roman}
+\tableofcontents
+\clearemptydoublepage
+\pagenumbering{arabic}
+\chapter{Índice dos Componentes}
+\input{annotated}
+\chapter{Índice dos Arquivos}
+\input{files}
+\chapter{Classes}
+\input{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicInterface}
+\include{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicList}
+\include{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest}
+\chapter{Arquivos}
+\input{GraphicInterface_8h}
+\include{GraphicList_8h}
+\include{P2PTest_8h}
+\include{GraphicInterface_8cpp}
+\include{GraphicList_8cpp}
+\include{P2PTest_8cpp}
+\printindex
+\end{document}

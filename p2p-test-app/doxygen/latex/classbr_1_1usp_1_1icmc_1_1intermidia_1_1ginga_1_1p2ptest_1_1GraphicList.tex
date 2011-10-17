@@ -1,0 +1,269 @@
+\section{Referência da Classe br::usp::icmc::intermidia::ginga::p2ptest::GraphicList}
+\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicList}\index{br::usp::icmc::intermidia::ginga::p2ptest::GraphicList@{br::usp::icmc::intermidia::ginga::p2ptest::GraphicList}}
+
+
+{\ttfamily \#include $<$GraphicList.h$>$}
+
+\subsection*{Métodos Públicos}
+\begin{DoxyCompactItemize}
+\item 
+{\bf GraphicList} ({\bf GraphicInterface} $\ast$gi1, int x1, int y1, int width1, int lineHeight1, int numberOfLines1, IColor $\ast$backgroundColor1, IColor $\ast$selectedItemColor1, IColor $\ast$fontColor1, IColor $\ast$selectedItemFontColor1)
+\item 
+{\bf $\sim$GraphicList} ()
+\item 
+void {\bf reset} ()
+\item 
+void {\bf setItens} (vector$<$ string $>$ $\ast${\bf itens})
+\item 
+void {\bf setItens} (vector$<$ string $>$ $\ast${\bf itens}, vector$<$ bool $>$ $\ast${\bf showImage}, string {\bf imagePath})
+\item 
+bool {\bf downPressed} ()
+\item 
+bool {\bf upPressed} ()
+\item 
+string {\bf getFocusedItemString} ()
+\item 
+int {\bf getFocusedItem} ()
+\item 
+void {\bf draw} ()
+\item 
+void {\bf drawScroll} ()
+\end{DoxyCompactItemize}
+\subsection*{Atributos Protegidos}
+\begin{DoxyCompactItemize}
+\item 
+HLoggerPtr {\bf logger}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicList_aedef1371e5a8c14500e4b814ed4049be}
+
+\begin{DoxyCompactList}\small\item\em Componente auxiliar para realização de logs. \item\end{DoxyCompactList}\item 
+{\bf GraphicInterface} $\ast$ {\bf gi}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicList_aab152f4faf03935872bbbe22d8cccdfd}
+
+\begin{DoxyCompactList}\small\item\em Objeto usado para mostrar as coisas na tela. \item\end{DoxyCompactList}\item 
+vector$<$ string $>$ $\ast$ {\bf itens}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicList_a4c1daf43a62a5a1ef60a52b8e4c422e7}
+
+\begin{DoxyCompactList}\small\item\em Lista de strings a serem mostradas. \item\end{DoxyCompactList}\item 
+vector$<$ bool $>$ $\ast$ {\bf showImage}
+\item 
+int {\bf x}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicList_a2fa7d5768092e9ec79effd6f8d89817f}
+
+\begin{DoxyCompactList}\small\item\em Posição x do canto esquerdo. \item\end{DoxyCompactList}\item 
+int {\bf y}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicList_a42619d41f10599798643df791b00a528}
+
+\begin{DoxyCompactList}\small\item\em Posição y de cima. \item\end{DoxyCompactList}\item 
+int {\bf width}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicList_ad69a377818a91e919c0c22880776f45f}
+
+\begin{DoxyCompactList}\small\item\em Largura do componente. \item\end{DoxyCompactList}\item 
+int {\bf lineHeight}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicList_ab87822412c218bf498978981892d3c64}
+
+\begin{DoxyCompactList}\small\item\em Altura em pixels de cada linha. \item\end{DoxyCompactList}\item 
+int {\bf numberOfVisibleLines}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicList_a9a37e5a4d6c7b6323d5fcb04d2f8ba18}
+
+\begin{DoxyCompactList}\small\item\em Quantidade de linhas que podem ser vistas ao mesmo tempo. \item\end{DoxyCompactList}\item 
+int {\bf height}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicList_a8a2c0895502e32ee42afcbdd9b7a03c3}
+
+\begin{DoxyCompactList}\small\item\em Altura do componente. Calculado a partir dos dois atributos anteriores. \item\end{DoxyCompactList}\item 
+IColor $\ast$ {\bf backgroundColor}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicList_adb9f3b0efde24b587d904e6e705ebfca}
+
+\begin{DoxyCompactList}\small\item\em Cor de fundo desse componente. \item\end{DoxyCompactList}\item 
+IColor $\ast$ {\bf selectedItemColor}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicList_a37b4ec2e85e256bd1a5deda660acff03}
+
+\begin{DoxyCompactList}\small\item\em Cor da linha do item selecionado. \item\end{DoxyCompactList}\item 
+IColor $\ast$ {\bf fontColor}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicList_af128b2652a638e976a31386a7961527d}
+
+\begin{DoxyCompactList}\small\item\em Cor da fonte do item não selecionado. \item\end{DoxyCompactList}\item 
+IColor $\ast$ {\bf selectedItemFontColor}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicList_aa7c8f84d7c80897b34cbae6810201a3f}
+
+\begin{DoxyCompactList}\small\item\em Cor da fonte do item selecionado. \item\end{DoxyCompactList}\item 
+int {\bf focusedItem}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicList_aafbbbc2b03b1b7df0ce9a1c8adb63b29}
+
+\begin{DoxyCompactList}\small\item\em Indica qual item da lista está com foco. Começa em 0. \item\end{DoxyCompactList}\item 
+int {\bf firstItemInPage}
+\item 
+string {\bf imagePath}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicList_ace89919246dc97655617255dceedf8a8}
+
+\begin{DoxyCompactList}\small\item\em Caminho da imagem que deve ser desenhada antes do texto de cada item. \item\end{DoxyCompactList}\item 
+int {\bf margin}
+\item 
+int {\bf scrollWidth}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicList_a2eb1ce18fc194bf91f36615268931d2b}
+
+\begin{DoxyCompactList}\small\item\em Largura do scroll. \item\end{DoxyCompactList}\item 
+int {\bf imageWidth}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicList_a82f19e1f13889caf143b34028a0fa8eb}
+
+\begin{DoxyCompactList}\small\item\em Largura da possível imagem do lado de cada item. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descrição Detalhada}
+Classe responsável por mostrar texto, imagem e formas geométricas na tela. 
+
+\subsection{Construtores \& Destrutores}
+\index{br::usp::icmc::intermidia::ginga::p2ptest::GraphicList@{br::usp::icmc::intermidia::ginga::p2ptest::GraphicList}!GraphicList@{GraphicList}}
+\index{GraphicList@{GraphicList}!br::usp::icmc::intermidia::ginga::p2ptest::GraphicList@{br::usp::icmc::intermidia::ginga::p2ptest::GraphicList}}
+\subsubsection[{GraphicList}]{\setlength{\rightskip}{0pt plus 5cm}br::usp::icmc::intermidia::ginga::p2ptest::GraphicList::GraphicList ({\bf GraphicInterface} $\ast$ {\em gi1}, \/  int {\em x1}, \/  int {\em y1}, \/  int {\em width1}, \/  int {\em lineHeight1}, \/  int {\em numberOfLines1}, \/  IColor $\ast$ {\em backgroundColor1}, \/  IColor $\ast$ {\em selectedItemColor1}, \/  IColor $\ast$ {\em fontColor1}, \/  IColor $\ast$ {\em selectedItemFontColor1})}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicList_aaf903faaa6ef750a4d74328ed2f39ba8}
+Constrói um objeto \doxyref{GraphicList}{pag.}{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicList}. Não deixamos passar a altura do componente para não deixar acontecer erro de arredondamento. 
+
+Referências logger.
+
+\index{br::usp::icmc::intermidia::ginga::p2ptest::GraphicList@{br::usp::icmc::intermidia::ginga::p2ptest::GraphicList}!$\sim$GraphicList@{$\sim$GraphicList}}
+\index{$\sim$GraphicList@{$\sim$GraphicList}!br::usp::icmc::intermidia::ginga::p2ptest::GraphicList@{br::usp::icmc::intermidia::ginga::p2ptest::GraphicList}}
+\subsubsection[{$\sim$GraphicList}]{\setlength{\rightskip}{0pt plus 5cm}br::usp::icmc::intermidia::ginga::p2ptest::GraphicList::$\sim$GraphicList ()}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicList_af219d91360260a820c8be62502731a8f}
+Destói o objeto \doxyref{GraphicList}{pag.}{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicList}. 
+
+Referências logger.
+
+
+
+\subsection{Métodos}
+\index{br::usp::icmc::intermidia::ginga::p2ptest::GraphicList@{br::usp::icmc::intermidia::ginga::p2ptest::GraphicList}!downPressed@{downPressed}}
+\index{downPressed@{downPressed}!br::usp::icmc::intermidia::ginga::p2ptest::GraphicList@{br::usp::icmc::intermidia::ginga::p2ptest::GraphicList}}
+\subsubsection[{downPressed}]{\setlength{\rightskip}{0pt plus 5cm}bool br::usp::icmc::intermidia::ginga::p2ptest::GraphicList::downPressed ()}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicList_a48fd072a3f95bc2cd2b01640e4c6d131}
+Atualiza o estado para refletir o pressionamento da tecla seta para baixo.
+
+\begin{DoxyReturn}{Retorna}
+true caso alguma mudança de estado ocorra e false caso contrário. 
+\end{DoxyReturn}
+
+
+Referências firstItemInPage, focusedItem, logger e numberOfVisibleLines.
+
+
+
+Referenciado por br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::userEventReceived().
+
+\index{br::usp::icmc::intermidia::ginga::p2ptest::GraphicList@{br::usp::icmc::intermidia::ginga::p2ptest::GraphicList}!draw@{draw}}
+\index{draw@{draw}!br::usp::icmc::intermidia::ginga::p2ptest::GraphicList@{br::usp::icmc::intermidia::ginga::p2ptest::GraphicList}}
+\subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}void br::usp::icmc::intermidia::ginga::p2ptest::GraphicList::draw ()}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicList_af4a347dd3ac418ab34439fb491fe077a}
+Desenha esse componente na \doxyref{GraphicInterface}{pag.}{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicInterface}. 
+
+Referências backgroundColor, drawScroll(), firstItemInPage, focusedItem, fontColor, gi, height, imagePath, imageWidth, itens, lineHeight, logger, margin, numberOfVisibleLines, scrollWidth, selectedItemColor, selectedItemFontColor, showImage, width, x e y.
+
+
+
+Referenciado por br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::showConnected() e br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::showPossibleFilesToSend().
+
+\index{br::usp::icmc::intermidia::ginga::p2ptest::GraphicList@{br::usp::icmc::intermidia::ginga::p2ptest::GraphicList}!drawScroll@{drawScroll}}
+\index{drawScroll@{drawScroll}!br::usp::icmc::intermidia::ginga::p2ptest::GraphicList@{br::usp::icmc::intermidia::ginga::p2ptest::GraphicList}}
+\subsubsection[{drawScroll}]{\setlength{\rightskip}{0pt plus 5cm}void br::usp::icmc::intermidia::ginga::p2ptest::GraphicList::drawScroll ()}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicList_aeacf4bb7630455b8d5900daf436c56db}
+Desenha a barra de rolagem. 
+
+Referências firstItemInPage, gi, height, itens, lineHeight, logger, margin, numberOfVisibleLines, scrollWidth, width, x e y.
+
+
+
+Referenciado por draw().
+
+\index{br::usp::icmc::intermidia::ginga::p2ptest::GraphicList@{br::usp::icmc::intermidia::ginga::p2ptest::GraphicList}!getFocusedItem@{getFocusedItem}}
+\index{getFocusedItem@{getFocusedItem}!br::usp::icmc::intermidia::ginga::p2ptest::GraphicList@{br::usp::icmc::intermidia::ginga::p2ptest::GraphicList}}
+\subsubsection[{getFocusedItem}]{\setlength{\rightskip}{0pt plus 5cm}int br::usp::icmc::intermidia::ginga::p2ptest::GraphicList::getFocusedItem ()}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicList_ae0dab000288c260f572ee3e878bb2c12}
+Acessa o índice do ítem selecionado.
+
+\begin{DoxyReturn}{Retorna}
+o índice do ítem selecionado. 
+\end{DoxyReturn}
+
+
+Referências focusedItem e logger.
+
+
+
+Referenciado por br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::userEventReceived().
+
+\index{br::usp::icmc::intermidia::ginga::p2ptest::GraphicList@{br::usp::icmc::intermidia::ginga::p2ptest::GraphicList}!getFocusedItemString@{getFocusedItemString}}
+\index{getFocusedItemString@{getFocusedItemString}!br::usp::icmc::intermidia::ginga::p2ptest::GraphicList@{br::usp::icmc::intermidia::ginga::p2ptest::GraphicList}}
+\subsubsection[{getFocusedItemString}]{\setlength{\rightskip}{0pt plus 5cm}string br::usp::icmc::intermidia::ginga::p2ptest::GraphicList::getFocusedItemString ()}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicList_a4da7dbcd6bc40c8fc14d93d7cbf4b994}
+Acessa o valor apontado pelo ítem selecionado.
+
+\begin{DoxyReturn}{Retorna}
+o valor do ítem selecionado. 
+\end{DoxyReturn}
+
+
+Referências focusedItem, itens e logger.
+
+
+
+Referenciado por br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::userEventReceived().
+
+\index{br::usp::icmc::intermidia::ginga::p2ptest::GraphicList@{br::usp::icmc::intermidia::ginga::p2ptest::GraphicList}!reset@{reset}}
+\index{reset@{reset}!br::usp::icmc::intermidia::ginga::p2ptest::GraphicList@{br::usp::icmc::intermidia::ginga::p2ptest::GraphicList}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}void br::usp::icmc::intermidia::ginga::p2ptest::GraphicList::reset ()}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicList_a6d33f117c323488838c1321fda5c08f3}
+Define novamente o primeiro item como o selecionado. 
+
+Referências firstItemInPage, focusedItem e logger.
+
+
+
+Referenciado por br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::fillVectorWithFileNames().
+
+\index{br::usp::icmc::intermidia::ginga::p2ptest::GraphicList@{br::usp::icmc::intermidia::ginga::p2ptest::GraphicList}!setItens@{setItens}}
+\index{setItens@{setItens}!br::usp::icmc::intermidia::ginga::p2ptest::GraphicList@{br::usp::icmc::intermidia::ginga::p2ptest::GraphicList}}
+\subsubsection[{setItens}]{\setlength{\rightskip}{0pt plus 5cm}void br::usp::icmc::intermidia::ginga::p2ptest::GraphicList::setItens (vector$<$ string $>$ $\ast$ {\em itens}, \/  vector$<$ bool $>$ $\ast$ {\em showImage}, \/  string {\em imagePath})}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicList_a8acdb9755bea2b50d9eaa06fd0f968a6}
+Seta uma nova lista de nomes. itens deve ter a mesma quantidade de elemetos que showImage.
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em itens}]Lista de strings a serem mostradas. \item[{\em showImage}]Lista de booleanos que indicam se a imagem deve ser mostrada ou não para um determinado item. \item[{\em path}]Caminho da imagem que será usada. \end{DoxyParams}
+
+
+Referências logger e setItens().
+
+\index{br::usp::icmc::intermidia::ginga::p2ptest::GraphicList@{br::usp::icmc::intermidia::ginga::p2ptest::GraphicList}!setItens@{setItens}}
+\index{setItens@{setItens}!br::usp::icmc::intermidia::ginga::p2ptest::GraphicList@{br::usp::icmc::intermidia::ginga::p2ptest::GraphicList}}
+\subsubsection[{setItens}]{\setlength{\rightskip}{0pt plus 5cm}void br::usp::icmc::intermidia::ginga::p2ptest::GraphicList::setItens (vector$<$ string $>$ $\ast$ {\em itens})}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicList_a287d368e37e068dd6182512a25e44625}
+Seta uma nova lista de nomes.
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em itens}]Lista de strings a serem mostradas. \end{DoxyParams}
+
+
+Referências firstItemInPage, focusedItem, imagePath, logger e numberOfVisibleLines.
+
+
+
+Referenciado por br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::fillVectorWithFileNames(), setItens() e br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::showConnected().
+
+\index{br::usp::icmc::intermidia::ginga::p2ptest::GraphicList@{br::usp::icmc::intermidia::ginga::p2ptest::GraphicList}!upPressed@{upPressed}}
+\index{upPressed@{upPressed}!br::usp::icmc::intermidia::ginga::p2ptest::GraphicList@{br::usp::icmc::intermidia::ginga::p2ptest::GraphicList}}
+\subsubsection[{upPressed}]{\setlength{\rightskip}{0pt plus 5cm}bool br::usp::icmc::intermidia::ginga::p2ptest::GraphicList::upPressed ()}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicList_afd65798e446268d3a31342cfd9ab3b3d}
+Atualiza o estado para refletir o pressionamento da tecla cima para baixo.
+
+\begin{DoxyReturn}{Retorna}
+true caso alguma mudança de estado ocorra e false caso contrário. 
+\end{DoxyReturn}
+
+
+Referências firstItemInPage, focusedItem e logger.
+
+
+
+Referenciado por br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::userEventReceived().
+
+
+
+\subsection{Atributos}
+\index{br::usp::icmc::intermidia::ginga::p2ptest::GraphicList@{br::usp::icmc::intermidia::ginga::p2ptest::GraphicList}!firstItemInPage@{firstItemInPage}}
+\index{firstItemInPage@{firstItemInPage}!br::usp::icmc::intermidia::ginga::p2ptest::GraphicList@{br::usp::icmc::intermidia::ginga::p2ptest::GraphicList}}
+\subsubsection[{firstItemInPage}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf br::usp::icmc::intermidia::ginga::p2ptest::GraphicList::firstItemInPage}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicList_a5fbfbc7a07a9eb425b20599d5bb9fdd8}
+Indica qual item está na primeira posição da lista visível. Feito para tratar rolagem, ou seja, quando existem mais itens que a área disponível pode mostrar de uma só vez. Começa em 0. 
+
+Referenciado por downPressed(), draw(), drawScroll(), reset(), setItens() e upPressed().
+
+\index{br::usp::icmc::intermidia::ginga::p2ptest::GraphicList@{br::usp::icmc::intermidia::ginga::p2ptest::GraphicList}!margin@{margin}}
+\index{margin@{margin}!br::usp::icmc::intermidia::ginga::p2ptest::GraphicList@{br::usp::icmc::intermidia::ginga::p2ptest::GraphicList}}
+\subsubsection[{margin}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf br::usp::icmc::intermidia::ginga::p2ptest::GraphicList::margin}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicList_ab2f27ecefb847784d22b78040da5f212}
+Margem usada entre o limite do componente, os itens e a barra de rolagem. 
+
+Referenciado por draw() e drawScroll().
+
+\index{br::usp::icmc::intermidia::ginga::p2ptest::GraphicList@{br::usp::icmc::intermidia::ginga::p2ptest::GraphicList}!showImage@{showImage}}
+\index{showImage@{showImage}!br::usp::icmc::intermidia::ginga::p2ptest::GraphicList@{br::usp::icmc::intermidia::ginga::p2ptest::GraphicList}}
+\subsubsection[{showImage}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$bool$>$$\ast$ {\bf br::usp::icmc::intermidia::ginga::p2ptest::GraphicList::showImage}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1GraphicList_a1f031585973abd62c461e5bb1446c09b}
+Lista de booleanos que indicam se a imagem deve ser mostrada ou não para um determinado item. 
+
+Referenciado por draw().
+
+
+
+A documentação para esta classe foi gerada a partir dos seguintes arquivos:\begin{DoxyCompactItemize}
+\item 
+include/{\bf GraphicList.h}\item 
+src/{\bf GraphicList.cpp}\end{DoxyCompactItemize}

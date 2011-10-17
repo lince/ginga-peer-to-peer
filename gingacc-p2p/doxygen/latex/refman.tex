@@ -1,0 +1,55 @@
+\documentclass[a4paper]{book}
+\usepackage{a4wide}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{textcomp}
+\usepackage{alltt}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{doxygen}
+\lstset{language=C++,inputencoding=utf8,basicstyle=\footnotesize,breaklines=true,breakatwhitespace=true,tabsize=8,numbers=left }
+\makeindex
+\setcounter{tocdepth}{3}
+\renewcommand{\footrulewidth}{0.4pt}
+\begin{document}
+\begin{titlepage}
+\vspace*{7cm}
+\begin{center}
+{\Large Ginga-\/CC P2P }\\
+\vspace*{1cm}
+{\large Gerado por Doxygen 1.6.3}\\
+\vspace*{0.5cm}
+{\small Wed Nov 17 16:35:47 2010}\\
+\end{center}
+\end{titlepage}
+\clearemptydoublepage
+\pagenumbering{roman}
+\tableofcontents
+\clearemptydoublepage
+\pagenumbering{arabic}
+\chapter{Índice dos Componentes}
+\input{hierarchy}
+\chapter{Índice dos Componentes}
+\input{annotated}
+\chapter{Índice dos Arquivos}
+\input{files}
+\chapter{Classes}
+\input{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1ChatTask}
+\include{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient}
+\include{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PEventListener}
+\include{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager}
+\include{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1P2PManager}
+\chapter{Arquivos}
+\input{ChatTask_8h}
+\include{FileShareClient_8h}
+\include{IP2PEventListener_8h}
+\include{IP2PManager_8h}
+\include{P2PManager_8h}
+\include{FileShareClient_8cpp}
+\include{P2PManager_8cpp}
+\printindex
+\end{document}

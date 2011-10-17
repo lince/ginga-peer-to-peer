@@ -1,0 +1,88 @@
+\section{Referência da Classe br::usp::icmc::intermidia::ginga::core::p2p::IP2PEventListener}
+\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PEventListener}\index{br::usp::icmc::intermidia::ginga::core::p2p::IP2PEventListener@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PEventListener}}
+
+
+{\ttfamily \#include $<$IP2PEventListener.h$>$}
+
+\subsection*{Métodos Públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$IP2PEventListener} ()
+\item 
+virtual void {\bf transferStateChanged} ({\bf FileShareClient::State} state, const cricket::FileShareManifest $\ast$manifest)=0
+\item 
+virtual void {\bf stateChanged} (buzz::XmppEngine::State state)=0
+\item 
+virtual void {\bf friendsStatusChanged} (const buzz::Status \&status)=0
+\item 
+virtual void {\bf chatMessageReceived} (const string \&from, const string \&text)=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Descrição Detalhada}
+Interface que representa um observador de eventos P2P. 
+
+\subsection{Construtores \& Destrutores}
+\index{br::usp::icmc::intermidia::ginga::core::p2p::IP2PEventListener@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PEventListener}!$\sim$IP2PEventListener@{$\sim$IP2PEventListener}}
+\index{$\sim$IP2PEventListener@{$\sim$IP2PEventListener}!br::usp::icmc::intermidia::ginga::core::p2p::IP2PEventListener@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PEventListener}}
+\subsubsection[{$\sim$IP2PEventListener}]{\setlength{\rightskip}{0pt plus 5cm}virtual br::usp::icmc::intermidia::ginga::core::p2p::IP2PEventListener::$\sim$IP2PEventListener ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PEventListener_a89ed1fa0149ec684ef7e65b6aeeabb30}
+Destrói o \doxyref{IP2PEventListener}{pag.}{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PEventListener}. 
+
+Referências chatMessageReceived(), friendsStatusChanged(), stateChanged() e transferStateChanged().
+
+
+
+\subsection{Métodos}
+\index{br::usp::icmc::intermidia::ginga::core::p2p::IP2PEventListener@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PEventListener}!chatMessageReceived@{chatMessageReceived}}
+\index{chatMessageReceived@{chatMessageReceived}!br::usp::icmc::intermidia::ginga::core::p2p::IP2PEventListener@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PEventListener}}
+\subsubsection[{chatMessageReceived}]{\setlength{\rightskip}{0pt plus 5cm}virtual void br::usp::icmc::intermidia::ginga::core::p2p::IP2PEventListener::chatMessageReceived (const string \& {\em from}, \/  const string \& {\em text})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PEventListener_a0724398599058bbcf4926501954c2ec7}
+Notifica recebimento de mensagens de texto.
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em from}]Bare jid do remetente em forma de string. \item[{\em text}]Mensagem enviada. \end{DoxyParams}
+
+
+Referenciado por $\sim$IP2PEventListener().
+
+\index{br::usp::icmc::intermidia::ginga::core::p2p::IP2PEventListener@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PEventListener}!friendsStatusChanged@{friendsStatusChanged}}
+\index{friendsStatusChanged@{friendsStatusChanged}!br::usp::icmc::intermidia::ginga::core::p2p::IP2PEventListener@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PEventListener}}
+\subsubsection[{friendsStatusChanged}]{\setlength{\rightskip}{0pt plus 5cm}virtual void br::usp::icmc::intermidia::ginga::core::p2p::IP2PEventListener::friendsStatusChanged (const buzz::Status \& {\em status})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PEventListener_aa88a07c6d728cb0b8f557139248b8457}
+Notifica mudança de status de algum amigo.
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em status}]Indica novo status de um amigo. \end{DoxyParams}
+
+
+Referenciado por $\sim$IP2PEventListener().
+
+\index{br::usp::icmc::intermidia::ginga::core::p2p::IP2PEventListener@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PEventListener}!stateChanged@{stateChanged}}
+\index{stateChanged@{stateChanged}!br::usp::icmc::intermidia::ginga::core::p2p::IP2PEventListener@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PEventListener}}
+\subsubsection[{stateChanged}]{\setlength{\rightskip}{0pt plus 5cm}virtual void br::usp::icmc::intermidia::ginga::core::p2p::IP2PEventListener::stateChanged (buzz::XmppEngine::State {\em state})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PEventListener_ad767ebd97d479dc99e6604ee98075d44}
+Notifica mudança de estado da conexão do \doxyref{P2PManager}{pag.}{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1P2PManager}.
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em state}]Indica o novo estado da conexão. \end{DoxyParams}
+
+
+Referenciado por $\sim$IP2PEventListener().
+
+\index{br::usp::icmc::intermidia::ginga::core::p2p::IP2PEventListener@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PEventListener}!transferStateChanged@{transferStateChanged}}
+\index{transferStateChanged@{transferStateChanged}!br::usp::icmc::intermidia::ginga::core::p2p::IP2PEventListener@{br::usp::icmc::intermidia::ginga::core::p2p::IP2PEventListener}}
+\subsubsection[{transferStateChanged}]{\setlength{\rightskip}{0pt plus 5cm}virtual void br::usp::icmc::intermidia::ginga::core::p2p::IP2PEventListener::transferStateChanged ({\bf FileShareClient::State} {\em state}, \/  const cricket::FileShareManifest $\ast$ {\em manifest})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PEventListener_ad609801c171a1066a28ce90ce7ba5928}
+Notifica oferta para receber um arquivo ou pasta ou alguma mudança de estado relacionada a uma transferência de arquivo ou pasta.
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em state}]Indica o que ocorreu. \item[{\em manifest}]Descrição dos itens que estão sendo oferecidos. Só é enviado quando o state é OFFER. \end{DoxyParams}
+
+
+Referenciado por $\sim$IP2PEventListener().
+
+
+
+A documentação para esta classe foi gerada a partir do seguinte arquivo:\begin{DoxyCompactItemize}
+\item 
+include/{\bf IP2PEventListener.h}\end{DoxyCompactItemize}

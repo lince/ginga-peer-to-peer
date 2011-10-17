@@ -1,0 +1,639 @@
+\section{Referência da Classe br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}
+\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest}\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}
+
+
+{\ttfamily \#include $<$P2PTest.h$>$}
+
+\subsection*{Métodos Públicos}
+\begin{DoxyCompactItemize}
+\item 
+{\bf $\sim$P2PTest} ()
+\item 
+bool {\bf userEventReceived} (IInputEvent $\ast$ev)
+\item 
+bool {\bf multimodalUserEventReceived} (IMultimodalInputEvent $\ast$ev)
+\end{DoxyCompactItemize}
+\subsection*{Métodos Públicos Estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf P2PTest} $\ast$ {\bf getInstance} ()
+\end{DoxyCompactItemize}
+\subsection*{Tipos Protegidos}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf Screen} \{ \par
+{\bf NONE}, 
+{\bf DISCONNECTED}, 
+{\bf CONNECTED}, 
+{\bf ACCEPTING}, 
+\par
+{\bf STATUS}, 
+{\bf POPUP}, 
+{\bf FILES}, 
+{\bf TRANSFERING}, 
+\par
+{\bf FRIEND}, 
+{\bf SLIDESHOW}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Métodos Protegidos}
+\begin{DoxyCompactItemize}
+\item 
+{\bf P2PTest} ()
+\item 
+void {\bf initializeWindow} ()
+\item 
+void {\bf showMainScreen} ()
+\item 
+void {\bf showDisconnected} ()
+\item 
+void {\bf showConnected} ()
+\item 
+void {\bf showFriend} (string $\ast$filename=NULL)
+\item 
+void {\bf showPossibleFilesToSend} ()
+\item 
+void {\bf showFileshareCapabilityWarning} ()
+\item 
+void {\bf showTransfering} ()
+\item 
+void {\bf showSuccess} ()
+\item 
+void {\bf showImage} ()
+\item 
+void {\bf showStatusChoice} ()
+\item 
+void {\bf showHelp} ()
+\item 
+bool {\bf showOffer} (string message)
+\item 
+void {\bf fillVectorWithImageNames} (string folder)
+\item 
+void {\bf fillVectorWithNamesOfFriends} ()
+\item 
+void {\bf fillVectorWithFileNames} (string folder)
+\item 
+bool {\bf isImage} (string path)
+\item 
+bool {\bf isFolder} (string path)
+\item 
+void {\bf connect} ()
+\item 
+void {\bf transferStateChanged} (FileShareClient::State {\bf state}, const cricket::FileShareManifest $\ast$manifest)
+\item 
+void {\bf stateChanged} (buzz::XmppEngine::State {\bf state})
+\item 
+void {\bf friendsStatusChanged} (const buzz::Status \&status)
+\item 
+void {\bf chatMessageReceived} (const string \&from, const string \&text)
+\item 
+void {\bf registerListener} ()
+\item 
+string {\bf statusToString} (buzz::Status::Show statusShow)
+\item 
+void {\bf updateFileshareCapableFriends} ()
+\end{DoxyCompactItemize}
+\subsection*{Atributos Protegidos}
+\begin{DoxyCompactItemize}
+\item 
+HLoggerPtr {\bf logger}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_a865da0fbb41c7c494b66b554d8b54ce8}
+
+\begin{DoxyCompactList}\small\item\em Componente auxiliar para realização de logs. \item\end{DoxyCompactList}\item 
+P2PManager $\ast$ {\bf p2p}
+\item 
+{\bf Screen} {\bf visibleScreen}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_aca2c3d87a7f54525e756606ecbc279f6}
+
+\begin{DoxyCompactList}\small\item\em Indica a tela atualmente visível da aplição. \item\end{DoxyCompactList}\item 
+buzz::XmppEngine::State {\bf state}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_a08746bd1df61ef0977cc0e722a73454d}
+
+\begin{DoxyCompactList}\small\item\em Indica o estado da conexção P2P. \item\end{DoxyCompactList}\item 
+IColor $\ast$ {\bf backgroundColor}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_a6d631998eb86edc1e38f00a81e9faa18}
+
+\begin{DoxyCompactList}\small\item\em Indica a cor de fundo da interface gráfica. \item\end{DoxyCompactList}\item 
+IColor $\ast$ {\bf selectedItemColor}
+\item 
+IColor $\ast$ {\bf fontColor}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_a47b253afdb70df4d234aa58b143162aa}
+
+\begin{DoxyCompactList}\small\item\em Indica a cor da fonte usada na interface gráfica. \item\end{DoxyCompactList}\item 
+IColor $\ast$ {\bf selectedItemFontColor}
+\item 
+IColor $\ast$ {\bf red}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_a8e77685aa06f31a3d54eaef77088f15c}
+
+\begin{DoxyCompactList}\small\item\em Cor usada para desenhar o botão vermelho na interface gráfica. \item\end{DoxyCompactList}\item 
+IColor $\ast$ {\bf green}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_adfd31496c40f547a6e846980cdd9a86a}
+
+\begin{DoxyCompactList}\small\item\em Cor usada para desenhar o botão verde na interface gráfica. \item\end{DoxyCompactList}\item 
+IColor $\ast$ {\bf yellow}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_a435066a0ee092f135813e9989863da03}
+
+\begin{DoxyCompactList}\small\item\em Cor usada para desenhar o botão amarelo na interface gráfica. \item\end{DoxyCompactList}\item 
+IColor $\ast$ {\bf blue}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_a4b7fa4f6cb76ac0f4360d65414805edd}
+
+\begin{DoxyCompactList}\small\item\em Cor usada para desenhar o botão azul na interface gráfica. \item\end{DoxyCompactList}\item 
+{\bf GraphicInterface} $\ast$ {\bf gi}
+\item 
+string {\bf destinationJid}
+\item 
+buzz::Status $\ast$ {\bf destinationStatus}
+\item 
+vector$<$ string $>$ $\ast$ {\bf files}
+\item 
+vector$<$ string $>$ $\ast$ {\bf friendsName}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_a812d6a1639084ec720b069bdd0aec885}
+
+\begin{DoxyCompactList}\small\item\em Guarda a lista dos nomes dos amigos conectados. \item\end{DoxyCompactList}\item 
+vector$<$ bool $>$ $\ast$ {\bf friendsIsFileShareCapable}
+\item 
+vector$<$ string $>$::iterator {\bf filesIterator}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_ae7f6dd844e6246d3f74d1320b8334738}
+
+\begin{DoxyCompactList}\small\item\em Permite mostrar as imagens recebidas como um slideshow. \item\end{DoxyCompactList}\item 
+{\bf GraphicList} $\ast$ {\bfseries gl}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_adf0c28b05ff56d59aaae400fd228f739}
+
+\item 
+string {\bf fileTransfered}
+\item 
+list$<$ string $>$ $\ast$ {\bf chatMessages}
+\end{DoxyCompactItemize}
+\subsection*{Atributos Estáticos Protegidos}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf P2PTest} $\ast$ {\bf \_\-instance} = NULL\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_af6e5fc57d62e2021b705b3891a9b9f40}
+
+\begin{DoxyCompactList}\small\item\em Instância única de \doxyref{P2PTest}{pag.}{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest}. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descrição Detalhada}
+Classe responsável por testar as funcionalidades do Compoente P2P. 
+
+\subsection{Enumerações}
+\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!Screen@{Screen}}
+\index{Screen@{Screen}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}
+\subsubsection[{Screen}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::Screen}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_a11fd1a5352cf43a6cb06085fb29f4d27}
+\begin{Desc}
+\item[Valores enumerados: ]\par
+\begin{description}
+\index{NONE@{NONE}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!NONE@{NONE}}\item[{\em 
+NONE\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_a11fd1a5352cf43a6cb06085fb29f4d27a36048a927f575c1cb74b68824ca7f7d1}
+}]Esperando para iniciar de verdade a aplicação \index{DISCONNECTED@{DISCONNECTED}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!DISCONNECTED@{DISCONNECTED}}\item[{\em 
+DISCONNECTED\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_a11fd1a5352cf43a6cb06085fb29f4d27a915c0186121b7880b67219209aa9c52b}
+}]Tela principal enquanto desconectado \index{CONNECTED@{CONNECTED}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!CONNECTED@{CONNECTED}}\item[{\em 
+CONNECTED\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_a11fd1a5352cf43a6cb06085fb29f4d27a6204134a47f1c09ad7900bd0f75c1820}
+}]Tela principal enquanto conectado \index{ACCEPTING@{ACCEPTING}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!ACCEPTING@{ACCEPTING}}\item[{\em 
+ACCEPTING\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_a11fd1a5352cf43a6cb06085fb29f4d27a80ed367ea12acd5c59437d8eb57b9b5f}
+}]Esperando aceitação ou rejeição de arquivo \index{STATUS@{STATUS}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!STATUS@{STATUS}}\item[{\em 
+STATUS\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_a11fd1a5352cf43a6cb06085fb29f4d27a4fc562c84f59ef2f01ca011a27c2fc4e}
+}]Permite que o usuário defina um novo status \index{POPUP@{POPUP}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!POPUP@{POPUP}}\item[{\em 
+POPUP\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_a11fd1a5352cf43a6cb06085fb29f4d27a961945990b702df5fd1b3ad71e7c0d8b}
+}]Mostra um aviso e volta para a tela principal com OK \index{FILES@{FILES}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!FILES@{FILES}}\item[{\em 
+FILES\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_a11fd1a5352cf43a6cb06085fb29f4d27ad4cf7a56035f2c1df6d45d21f305264f}
+}]Permite escolha de que arquivo ou diretório mandar \index{TRANSFERING@{TRANSFERING}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!TRANSFERING@{TRANSFERING}}\item[{\em 
+TRANSFERING\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_a11fd1a5352cf43a6cb06085fb29f4d27ad12c550f6256ec0282c589bb5b11dc71}
+}]Esperando envio ou recebimento do arquivo \index{FRIEND@{FRIEND}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!FRIEND@{FRIEND}}\item[{\em 
+FRIEND\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_a11fd1a5352cf43a6cb06085fb29f4d27a748cc6d1831fca30b90ddf2f1a8bef3c}
+}]Mostra mais detalhes sobre um amigo \index{SLIDESHOW@{SLIDESHOW}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!SLIDESHOW@{SLIDESHOW}}\item[{\em 
+SLIDESHOW\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_a11fd1a5352cf43a6cb06085fb29f4d27adb957f372dd9ee97bd4fe4c4e42499b0}
+}]Mostra, uma por uma, as imagens do vetor files. \end{description}
+\end{Desc}
+
+
+
+\subsection{Construtores \& Destrutores}
+\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!P2PTest@{P2PTest}}
+\index{P2PTest@{P2PTest}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}
+\subsubsection[{P2PTest}]{\setlength{\rightskip}{0pt plus 5cm}br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::P2PTest ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_aa2461ffc7c87e1d97df2c5ae908556d3}
+Constrói um objeto \doxyref{P2PTest}{pag.}{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest}. 
+
+Referências logger e registerListener().
+
+
+
+Referenciado por getInstance().
+
+\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!$\sim$P2PTest@{$\sim$P2PTest}}
+\index{$\sim$P2PTest@{$\sim$P2PTest}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}
+\subsubsection[{$\sim$P2PTest}]{\setlength{\rightskip}{0pt plus 5cm}br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::$\sim$P2PTest ()}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_aee8ab700839362f85791fe9d78159251}
+Destói o objeto \doxyref{P2PTest}{pag.}{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest}. 
+
+Referências backgroundColor, blue, chatMessages, files, fontColor, gi, green, red, selectedItemColor, selectedItemFontColor e yellow.
+
+
+
+\subsection{Métodos}
+\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!chatMessageReceived@{chatMessageReceived}}
+\index{chatMessageReceived@{chatMessageReceived}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}
+\subsubsection[{chatMessageReceived}]{\setlength{\rightskip}{0pt plus 5cm}void br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::chatMessageReceived (const string \& {\em from}, \/  const string \& {\em text})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_adb58c4c6d48beb39eaba4bdeeb0e6bcb}
+Notifica recebimento de mensagens de texto.
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em from}]Bare jid do remetente em forma de string. \item[{\em text}]Mensagem enviada. \end{DoxyParams}
+
+
+Referências chatMessages, FRIEND, getInstance(), logger, showFriend() e visibleScreen.
+
+\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!connect@{connect}}
+\index{connect@{connect}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}
+\subsubsection[{connect}]{\setlength{\rightskip}{0pt plus 5cm}void br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::connect ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_aba9db2cf78662342fa6c9c190830edbf}
+Lê as informações necessárias para conexão do arquivo de configuração e solicita conexão. 
+
+Referências logger e p2p.
+
+
+
+Referenciado por userEventReceived().
+
+\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!fillVectorWithFileNames@{fillVectorWithFileNames}}
+\index{fillVectorWithFileNames@{fillVectorWithFileNames}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}
+\subsubsection[{fillVectorWithFileNames}]{\setlength{\rightskip}{0pt plus 5cm}void br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::fillVectorWithFileNames (string {\em folder})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_a05ab50db35fcfa517720eb7b93c15b8a}
+Preenche o atributo files (vetor de string) com o nome dos arquivos contidas na pasta passada como parâmetro.
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em folder}]Nome da pasta onde serão buscados arquivos. \end{DoxyParams}
+
+
+Referências files, logger, br::usp::icmc::intermidia::ginga::p2ptest::GraphicList::reset() e br::usp::icmc::intermidia::ginga::p2ptest::GraphicList::setItens().
+
+
+
+Referenciado por userEventReceived().
+
+\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!fillVectorWithImageNames@{fillVectorWithImageNames}}
+\index{fillVectorWithImageNames@{fillVectorWithImageNames}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}
+\subsubsection[{fillVectorWithImageNames}]{\setlength{\rightskip}{0pt plus 5cm}void br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::fillVectorWithImageNames (string {\em folder})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_ae29ab1c05460d638ef53be3c03b833ba}
+Preenche o atributo files (vetor de string) com o nome das imagens contidas na pasta passada como parâmetro.
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em folder}]Nome da pasta onde serão buscadas imagens. \end{DoxyParams}
+
+
+Referências files, isImage() e logger.
+
+
+
+Referenciado por showSuccess().
+
+\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!fillVectorWithNamesOfFriends@{fillVectorWithNamesOfFriends}}
+\index{fillVectorWithNamesOfFriends@{fillVectorWithNamesOfFriends}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}
+\subsubsection[{fillVectorWithNamesOfFriends}]{\setlength{\rightskip}{0pt plus 5cm}void br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::fillVectorWithNamesOfFriends ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_a13c4429626ee810b01d8d24be069f032}
+Preenche o atributo files (vetor de string) com o nome dos amigos conectados. 
+
+Referências friendsIsFileShareCapable, friendsName, logger, p2p e statusToString().
+
+
+
+Referenciado por showConnected().
+
+\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!friendsStatusChanged@{friendsStatusChanged}}
+\index{friendsStatusChanged@{friendsStatusChanged}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}
+\subsubsection[{friendsStatusChanged}]{\setlength{\rightskip}{0pt plus 5cm}void br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::friendsStatusChanged (const buzz::Status \& {\em status})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_a3cdc87c3fd4fe3838de4b2264170e61e}
+Notifica mudança de status de algum amigo.
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em status}]Indica novo status de um amigo. \end{DoxyParams}
+
+
+Referências CONNECTED, getInstance(), logger, showConnected() e visibleScreen.
+
+\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}
+\subsubsection[{getInstance}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P2PTest} $\ast$ br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::getInstance ()\hspace{0.3cm}{\ttfamily  [static]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_a4c0684e168f8de3bd343e9107c0ec094}
+Acessa a instância única do objeto \doxyref{P2PTest}{pag.}{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest}.
+
+\begin{DoxyReturn}{Retorna}
+Instância de \doxyref{P2PTest}{pag.}{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest}. 
+\end{DoxyReturn}
+
+
+Referências \_\-instance e P2PTest().
+
+
+
+Referenciado por chatMessageReceived(), friendsStatusChanged(), stateChanged() e transferStateChanged().
+
+\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!initializeWindow@{initializeWindow}}
+\index{initializeWindow@{initializeWindow}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}
+\subsubsection[{initializeWindow}]{\setlength{\rightskip}{0pt plus 5cm}void br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::initializeWindow ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_adb75034505688077ec100c95304d0df9}
+Inicializa a janela que é usada para desenhar na tela. \index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!isFolder@{isFolder}}
+\index{isFolder@{isFolder}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}
+\subsubsection[{isFolder}]{\setlength{\rightskip}{0pt plus 5cm}bool br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::isFolder (string {\em path})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_a976416faeae776153d757d38a4c82cd0}
+Testa se um determinado caminho aponta para uma pasta.
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em path}]Caminho a ser testado. \end{DoxyParams}
+
+
+Referenciado por showSuccess() e showTransfering().
+
+\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!isImage@{isImage}}
+\index{isImage@{isImage}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}
+\subsubsection[{isImage}]{\setlength{\rightskip}{0pt plus 5cm}bool br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::isImage (string {\em path})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_a068a23e62dfaa67353ee77de98316246}
+Testa se um determinado caminho aponta para uma imagem. Deteca apenas imagens Gif, JPG, PNG e BMP, através da terminação.
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em path}]Caminho a ser testado. \end{DoxyParams}
+
+
+Referências logger.
+
+
+
+Referenciado por fillVectorWithImageNames(), multimodalUserEventReceived() e showSuccess().
+
+\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!multimodalUserEventReceived@{multimodalUserEventReceived}}
+\index{multimodalUserEventReceived@{multimodalUserEventReceived}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}
+\subsubsection[{multimodalUserEventReceived}]{\setlength{\rightskip}{0pt plus 5cm}bool br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::multimodalUserEventReceived (IMultimodalInputEvent $\ast$ {\em ev})}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_aa191d3957a4009932968e3e67a41dbb0}
+Trata toda a interação multimodal.
+
+ev Evento a ser tratado. 
+
+Referências chatMessages, destinationStatus, files, FRIEND, isImage(), logger, p2p, showFriend() e visibleScreen.
+
+\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!registerListener@{registerListener}}
+\index{registerListener@{registerListener}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}
+\subsubsection[{registerListener}]{\setlength{\rightskip}{0pt plus 5cm}void br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::registerListener ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_a84ba1dd6d0ea0b8712f3a1a1f2fad4e3}
+Registra-\/se como observador de eventos de tecla e multimodais. 
+
+Referências logger.
+
+
+
+Referenciado por P2PTest().
+
+\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!showConnected@{showConnected}}
+\index{showConnected@{showConnected}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}
+\subsubsection[{showConnected}]{\setlength{\rightskip}{0pt plus 5cm}void br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::showConnected ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_a08df079252ee24956e6d2c1193e528cc}
+Mostra a tela de conectado. 
+
+Referências backgroundColor, blue, CONNECTED, br::usp::icmc::intermidia::ginga::p2ptest::GraphicList::draw(), fillVectorWithNamesOfFriends(), fontColor, friendsIsFileShareCapable, friendsName, gi, green, logger, p2p, red, selectedItemFontColor, br::usp::icmc::intermidia::ginga::p2ptest::GraphicList::setItens(), statusToString(), visibleScreen e yellow.
+
+
+
+Referenciado por friendsStatusChanged(), showMainScreen(), transferStateChanged() e userEventReceived().
+
+\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!showDisconnected@{showDisconnected}}
+\index{showDisconnected@{showDisconnected}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}
+\subsubsection[{showDisconnected}]{\setlength{\rightskip}{0pt plus 5cm}void br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::showDisconnected ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_a93271789d68ce954a5f5cbd87aa2d60e}
+Mostra a tela de disconectado. 
+
+Referências backgroundColor, blue, DISCONNECTED, fontColor, gi, green, logger, p2p, red, selectedItemFontColor, statusToString(), visibleScreen e yellow.
+
+
+
+Referenciado por showMainScreen() e userEventReceived().
+
+\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!showFileshareCapabilityWarning@{showFileshareCapabilityWarning}}
+\index{showFileshareCapabilityWarning@{showFileshareCapabilityWarning}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}
+\subsubsection[{showFileshareCapabilityWarning}]{\setlength{\rightskip}{0pt plus 5cm}void br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::showFileshareCapabilityWarning ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_ab90dd742e148990b2b3c6bc1238cb3bf}
+Mostrada quando tenta-\/se enviar aquivos para alguém que não suporta tal funcionalidade. 
+
+Referências gi, logger, POPUP e visibleScreen.
+
+
+
+Referenciado por userEventReceived().
+
+\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!showFriend@{showFriend}}
+\index{showFriend@{showFriend}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}
+\subsubsection[{showFriend}]{\setlength{\rightskip}{0pt plus 5cm}void br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::showFriend (string $\ast$ {\em filename} = {\ttfamily NULL})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_ac14589ced6648ca1fac134ed011655bf}
+Mostra a tela de amigo, que contém o chat e permite envio de arquivos.
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em filename}]Nome do arquivo de imagem que deve ser mostrado por trás das mensagens de texto da conversa. Só é diferente de NULL quando o usuário recebe um evento multimodal contendo uma imagem. \end{DoxyParams}
+
+
+Referências backgroundColor, chatMessages, destinationStatus, fontColor, gi, green, logger e statusToString().
+
+
+
+Referenciado por chatMessageReceived(), multimodalUserEventReceived() e userEventReceived().
+
+\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!showHelp@{showHelp}}
+\index{showHelp@{showHelp}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}
+\subsubsection[{showHelp}]{\setlength{\rightskip}{0pt plus 5cm}void br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::showHelp ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_a036d18c3b49afa960e152b7d324f8c38}
+Mostra a tela de ajuda da aplicação. 
+
+Referências gi, logger, POPUP e visibleScreen.
+
+
+
+Referenciado por userEventReceived().
+
+\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!showImage@{showImage}}
+\index{showImage@{showImage}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}
+\subsubsection[{showImage}]{\setlength{\rightskip}{0pt plus 5cm}void br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::showImage ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_a60f874e2906da4ec16f9745e2d2b396b}
+Mostra as imagens, uma por vez, recebidas de um amigo. 
+
+Referências filesIterator, gi e logger.
+
+
+
+Referenciado por userEventReceived().
+
+\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!showMainScreen@{showMainScreen}}
+\index{showMainScreen@{showMainScreen}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}
+\subsubsection[{showMainScreen}]{\setlength{\rightskip}{0pt plus 5cm}void br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::showMainScreen ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_a035e0b75cb72481127b29b1de663dc02}
+Mostra a tela de conectado ou de disconectado, dependento do estado atual da aplicação. 
+
+Referências logger, showConnected(), showDisconnected() e state.
+
+
+
+Referenciado por stateChanged() e userEventReceived().
+
+\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!showOffer@{showOffer}}
+\index{showOffer@{showOffer}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}
+\subsubsection[{showOffer}]{\setlength{\rightskip}{0pt plus 5cm}bool br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::showOffer (string {\em message})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_a02843072acbb4470a0d790184fcf9ae3}
+Pergunta ao usuário, via interface gŕafica, se ele aceita receber o arquivo oferecido a ele.
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em message}]Mensagem que deve ser mostrada na interface gráfica. \end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+true para aceitar, false para rejeitar. 
+\end{DoxyReturn}
+
+
+Referências ACCEPTING, fontColor, gi, green, logger, red e visibleScreen.
+
+
+
+Referenciado por transferStateChanged().
+
+\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!showPossibleFilesToSend@{showPossibleFilesToSend}}
+\index{showPossibleFilesToSend@{showPossibleFilesToSend}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}
+\subsubsection[{showPossibleFilesToSend}]{\setlength{\rightskip}{0pt plus 5cm}void br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::showPossibleFilesToSend ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_aa470db50baf4ef4b24c223c3fec5d63a}
+Mostra uma lista de arquivos para que o usuário escolha qual deseja enviar. 
+
+Referências br::usp::icmc::intermidia::ginga::p2ptest::GraphicList::draw(), FILES, gi, logger e visibleScreen.
+
+
+
+Referenciado por userEventReceived().
+
+\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!showStatusChoice@{showStatusChoice}}
+\index{showStatusChoice@{showStatusChoice}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}
+\subsubsection[{showStatusChoice}]{\setlength{\rightskip}{0pt plus 5cm}void br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::showStatusChoice ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_ab4950e5d952f49e6faec6a83a9f67d7f}
+Mostra a tela que permite escolha do status atual. 
+
+Referências gi, logger, STATUS e visibleScreen.
+
+
+
+Referenciado por userEventReceived().
+
+\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!showSuccess@{showSuccess}}
+\index{showSuccess@{showSuccess}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}
+\subsubsection[{showSuccess}]{\setlength{\rightskip}{0pt plus 5cm}void br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::showSuccess ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_a34ab7e125a8ff41a6a74285d5642be99}
+Mostra mensagem de sucesso da transferência de um item. 
+
+Referências destinationJid, files, filesIterator, fileTransfered, fillVectorWithImageNames(), gi, isFolder(), isImage(), logger, POPUP, SLIDESHOW e visibleScreen.
+
+
+
+Referenciado por transferStateChanged().
+
+\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!showTransfering@{showTransfering}}
+\index{showTransfering@{showTransfering}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}
+\subsubsection[{showTransfering}]{\setlength{\rightskip}{0pt plus 5cm}void br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::showTransfering ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_af99020a5e2a687c4a6675ff5ab842c6f}
+Mostra mensagem de aguarde e informações sobre o que está sendo enviado ou recebido. 
+
+Referências destinationJid, fileTransfered, gi, isFolder(), logger, TRANSFERING e visibleScreen.
+
+
+
+Referenciado por userEventReceived().
+
+\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!stateChanged@{stateChanged}}
+\index{stateChanged@{stateChanged}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}
+\subsubsection[{stateChanged}]{\setlength{\rightskip}{0pt plus 5cm}void br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::stateChanged (buzz::XmppEngine::State {\em state})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_a19ebcfcbd27149c44decc1130d815763}
+Notifica mudança de estado da conexão do P2PManager.
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em state}]Indica o novo estado da conexão. \end{DoxyParams}
+
+
+Referências getInstance(), logger, showMainScreen() e state.
+
+\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!statusToString@{statusToString}}
+\index{statusToString@{statusToString}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}
+\subsubsection[{statusToString}]{\setlength{\rightskip}{0pt plus 5cm}string br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::statusToString (buzz::Status::Show {\em statusShow})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_aff721cc70c3ddbde9fbff93a99878b36}
+Transforma um Status em uma string para ser exibida na tela.
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em statusShow}]Código correspondente ao status da pessoa. \end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+O status em forma de string. 
+\end{DoxyReturn}
+
+
+Referenciado por fillVectorWithNamesOfFriends(), showConnected(), showDisconnected() e showFriend().
+
+\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!transferStateChanged@{transferStateChanged}}
+\index{transferStateChanged@{transferStateChanged}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}
+\subsubsection[{transferStateChanged}]{\setlength{\rightskip}{0pt plus 5cm}void br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::transferStateChanged (FileShareClient::State {\em state}, \/  const cricket::FileShareManifest $\ast$ {\em manifest})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_a4088bb9cbf5f13b093188fd05a2d5b2c}
+Notifica oferta para receber um arquivo ou pasta ou alguma mudança de estado relacionada a uma transferência de arquivo ou pasta.
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em state}]Indica o que ocorreu. \item[{\em manifest}]Descrição dos itens que estão sendo oferecidos. Só é enviado quando o state é OFFER. \end{DoxyParams}
+
+
+Referências destinationJid, destinationStatus, fileTransfered, getInstance(), logger, showConnected(), showOffer() e showSuccess().
+
+\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!updateFileshareCapableFriends@{updateFileshareCapableFriends}}
+\index{updateFileshareCapableFriends@{updateFileshareCapableFriends}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}
+\subsubsection[{updateFileshareCapableFriends}]{\setlength{\rightskip}{0pt plus 5cm}void br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::updateFileshareCapableFriends ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_a83850c627de635c46b9a229002e8e9e6}
+Atualiza a lista de amigos capazes de compartilhar arquivos. \index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!userEventReceived@{userEventReceived}}
+\index{userEventReceived@{userEventReceived}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}
+\subsubsection[{userEventReceived}]{\setlength{\rightskip}{0pt plus 5cm}bool br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::userEventReceived (IInputEvent $\ast$ {\em ev})}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_a1fa2c131cb48dbcf86af2e93c28525db}
+Trata toda a interação através do pressionamento de teclas.
+
+ev Evento a ser tratado. 
+
+Referências ACCEPTING, chatMessages, connect(), CONNECTED, destinationJid, destinationStatus, DISCONNECTED, br::usp::icmc::intermidia::ginga::p2ptest::GraphicList::downPressed(), files, FILES, filesIterator, fileTransfered, fillVectorWithFileNames(), FRIEND, br::usp::icmc::intermidia::ginga::p2ptest::GraphicList::getFocusedItem(), br::usp::icmc::intermidia::ginga::p2ptest::GraphicList::getFocusedItemString(), gi, logger, NONE, p2p, POPUP, showConnected(), showDisconnected(), showFileshareCapabilityWarning(), showFriend(), showHelp(), showImage(), showMainScreen(), showPossibleFilesToSend(), showStatusChoice(), showTransfering(), SLIDESHOW, STATUS, br::usp::icmc::intermidia::ginga::p2ptest::GraphicList::upPressed() e visibleScreen.
+
+
+
+\subsection{Atributos}
+\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!chatMessages@{chatMessages}}
+\index{chatMessages@{chatMessages}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}
+\subsubsection[{chatMessages}]{\setlength{\rightskip}{0pt plus 5cm}list$<$string$>$$\ast$ {\bf br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::chatMessages}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_ae8990fc8c2f4d84277218938464073b5}
+Mantém apenas as últimas mensagens visíveis. Uso list em vez de queue para ter iterator e clear. 
+
+Referenciado por chatMessageReceived(), multimodalUserEventReceived(), showFriend(), userEventReceived() e $\sim$P2PTest().
+
+\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!destinationJid@{destinationJid}}
+\index{destinationJid@{destinationJid}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}
+\subsubsection[{destinationJid}]{\setlength{\rightskip}{0pt plus 5cm}string {\bf br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::destinationJid}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_aeea9a226edfa7cab92b78033d818997c}
+Guarda o valor do Jid para quem o arquivo será enviado. Enquanto estiver \char`\"{}\char`\"{} significa que não está havendo um envio de arquivo. 
+
+Referenciado por showSuccess(), showTransfering(), transferStateChanged() e userEventReceived().
+
+\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!destinationStatus@{destinationStatus}}
+\index{destinationStatus@{destinationStatus}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}
+\subsubsection[{destinationStatus}]{\setlength{\rightskip}{0pt plus 5cm}buzz::Status$\ast$ {\bf br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::destinationStatus}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_a53e9ff9b4b6a072ec71e487b9b854098}
+Guarda o valor do Status para quem o arquivo será enviado. Enquanto estiver NULL significa que não está havendo um envio de arquivo. 
+
+Referenciado por multimodalUserEventReceived(), showFriend(), transferStateChanged() e userEventReceived().
+
+\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!files@{files}}
+\index{files@{files}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}
+\subsubsection[{files}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$string$>$$\ast$ {\bf br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::files}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_a7fede5bee44b8fd277485a2b69710c39}
+Guarda a lista de arquivos da pasta corrente, apresentados para que o usuário escolha qual deseja enviar, para que posteriormente seja possível identificar qual o usuário selecionou. Usado também para guardar lista de imagens contidas na pasta recebida. 
+
+Referenciado por fillVectorWithFileNames(), fillVectorWithImageNames(), multimodalUserEventReceived(), showSuccess(), userEventReceived() e $\sim$P2PTest().
+
+\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!fileTransfered@{fileTransfered}}
+\index{fileTransfered@{fileTransfered}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}
+\subsubsection[{fileTransfered}]{\setlength{\rightskip}{0pt plus 5cm}string {\bf br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::fileTransfered}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_ad5622a00ffd7ed5a9f68b8a172be2ad1}
+Guarda o nome do arquivo que está sendo recebido ou enviado para conseguir mostrar seu nome na mensagem de sucesso e conseguir exibir, caso seja uma imagem recebida. 
+
+Referenciado por showSuccess(), showTransfering(), transferStateChanged() e userEventReceived().
+
+\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!friendsIsFileShareCapable@{friendsIsFileShareCapable}}
+\index{friendsIsFileShareCapable@{friendsIsFileShareCapable}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}
+\subsubsection[{friendsIsFileShareCapable}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$bool$>$$\ast$ {\bf br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::friendsIsFileShareCapable}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_a40e2c1fbfdec056e6c4a97f827d4661c}
+Guarda uma lista associada à do nome dos amigos, indicando se ele possui capacidade de compartilhar arquivos. 
+
+Referenciado por fillVectorWithNamesOfFriends() e showConnected().
+
+\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!gi@{gi}}
+\index{gi@{gi}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}
+\subsubsection[{gi}]{\setlength{\rightskip}{0pt plus 5cm}{\bf GraphicInterface}$\ast$ {\bf br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::gi}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_a9c503188393b9d57cbabca3b337980da}
+Objeto responsável por gerenciar a Window e a Surface usada pela aplicação, assim como a fonte a a cor usada. Não adianta declarar várias GraphicInterfaces, prepará-\/las e ficar alternando entre elas, pois mesmo cada uma possuindo uma instância de surface e de window, existirá interferência entre elas. 
+
+Referenciado por showConnected(), showDisconnected(), showFileshareCapabilityWarning(), showFriend(), showHelp(), showImage(), showOffer(), showPossibleFilesToSend(), showStatusChoice(), showSuccess(), showTransfering(), userEventReceived() e $\sim$P2PTest().
+
+\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!p2p@{p2p}}
+\index{p2p@{p2p}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}
+\subsubsection[{p2p}]{\setlength{\rightskip}{0pt plus 5cm}P2PManager$\ast$ {\bf br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::p2p}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_ae8df0348e22f5cd16a6cd76ff6dd0e73}
+Guarda instância do P2PManager para não precisar ficar acessando toda vez. 
+
+Referenciado por connect(), fillVectorWithNamesOfFriends(), multimodalUserEventReceived(), showConnected(), showDisconnected() e userEventReceived().
+
+\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!selectedItemColor@{selectedItemColor}}
+\index{selectedItemColor@{selectedItemColor}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}
+\subsubsection[{selectedItemColor}]{\setlength{\rightskip}{0pt plus 5cm}IColor$\ast$ {\bf br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::selectedItemColor}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_a76ea399ebbe493a38abbd106d46f0f52}
+Indica a cor de fundo do item selecionado de uma lista da interface gráfica. 
+
+Referenciado por $\sim$P2PTest().
+
+\index{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}!selectedItemFontColor@{selectedItemFontColor}}
+\index{selectedItemFontColor@{selectedItemFontColor}!br::usp::icmc::intermidia::ginga::p2ptest::P2PTest@{br::usp::icmc::intermidia::ginga::p2ptest::P2PTest}}
+\subsubsection[{selectedItemFontColor}]{\setlength{\rightskip}{0pt plus 5cm}IColor$\ast$ {\bf br::usp::icmc::intermidia::ginga::p2ptest::P2PTest::selectedItemFontColor}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1p2ptest_1_1P2PTest_a94a04fee59f399930d531f61d5b5d7b1}
+Indica a cor da fonte do item selecionado de uma lista da interface gráfica. 
+
+Referenciado por showConnected(), showDisconnected() e $\sim$P2PTest().
+
+
+
+A documentação para esta classe foi gerada a partir dos seguintes arquivos:\begin{DoxyCompactItemize}
+\item 
+include/{\bf P2PTest.h}\item 
+src/{\bf P2PTest.cpp}\end{DoxyCompactItemize}

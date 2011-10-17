@@ -1,0 +1,326 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Ginga-CC P2P: Referência da Classe br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Gerado por Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Página&nbsp;Principal</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Arquivos</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Lista&nbsp;de&nbsp;Componentes</span></a></li>
+      <li><a href="hierarchy.html"><span>Hierarquia&nbsp;de&nbsp;Classes</span></a></li>
+      <li><a href="functions.html"><span>Componentes&nbsp;Membros</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><b>br</b>::<b>usp</b>::<b>icmc</b>::<b>intermidia</b>::<b>ginga</b>::<b>core</b>::<b>p2p</b>::<a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient.html">FileShareClient</a>
+  </div>
+</div>
+<div class="contents">
+<h1>Referência da Classe br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient</h1><!-- doxytag: class="br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient" -->
+<p><code>#include &lt;<a class="el" href="FileShareClient_8h_source.html">FileShareClient.h</a>&gt;</code></p>
+
+<p><a href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient-members.html">Lista de todos os Membros.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Tipos Públicos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient.html#a8107d8473b5b423f212ffa238e230894">State</a> { <br/>
+&nbsp;&nbsp;<a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient.html#a8107d8473b5b423f212ffa238e230894add74e92b9f133b492dba78c528f10161">OFFER</a> =  0, 
+<a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient.html#a8107d8473b5b423f212ffa238e230894a9523203e14bfb4cc1ea7bb403d05f59d">TRANSFER</a> =  1, 
+<a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient.html#a8107d8473b5b423f212ffa238e230894a5b6aeb6180356da800dd5d8cac896114">COMPLETE</a> =  2, 
+<a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient.html#a8107d8473b5b423f212ffa238e230894ac7920ab10b5d25799da57c7d391f8bfc">LOCAL_CANCEL</a> =  3, 
+<br/>
+&nbsp;&nbsp;<a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient.html#a8107d8473b5b423f212ffa238e230894a083d96a14e3d98e812e2cd3f5308d165">REMOTE_CANCEL</a> =  4, 
+<a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient.html#a8107d8473b5b423f212ffa238e230894a78d4266954c1a008e7859d21faff3314">FAILURE</a> =  5
+<br/>
+ }</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom">{ <b>MSG_STOP</b>, 
+<b>MSG_DECLINE</b>, 
+<b>MSG_ACCEPT</b>
+ }</td></tr>
+<tr><td colspan="2"><h2>Métodos Públicos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient.html#a91d30e909ab8c51c53d1451d4b7dfcef">FileShareClient</a> (std::string root_dir)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient.html#a92af93ef3499961dbe6b6e45ac6b0b5c">~FileShareClient</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient.html#a89bea2344d930cfc0e0149630136e18d">setListener</a> (<a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PEventListener.html">IP2PEventListener</a> *listener)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient.html#a7cca6557f5606ee125481b317c6a70d3">setStatus</a> (buzz::Status::Show show, string message)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient.html#ae880077dd0b559a98eeb83fda410b7b2">sendFiles</a> (vector&lt; string &gt; *files, const buzz::Jid &amp;send_to, map&lt; string, buzz::Status &gt; *roster)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient.html#acc096dd9ed0f906d22a3b168da216be2">onSignon</a> (cricket::SessionManager *session_manager, const buzz::Jid jid)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient.html#aa216e2d67c19e22c6bd3a71315019bb9">onPossibleDestinationOnline</a> (const buzz::Status &amp;status)</td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Descrição Detalhada</h2>
+<p>Classe responsável pela troca de arquivos entre clientes XMPP. </p>
+<hr/><h2>Enumerações</h2>
+<a class="anchor" id="a4e681ca7516e609028da94b3476ca412"></a><!-- doxytag: member="br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient::@0" ref="a4e681ca7516e609028da94b3476ca412" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Possíveis valores para mensagens a serem trocadas entre threads através da MessageQueue. </p>
+
+</div>
+</div>
+<a class="anchor" id="a8107d8473b5b423f212ffa238e230894"></a><!-- doxytag: member="br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient::State" ref="a8107d8473b5b423f212ffa238e230894" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient.html#a8107d8473b5b423f212ffa238e230894">br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient::State</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl><dt><b>Valores enumerados: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="a8107d8473b5b423f212ffa238e230894add74e92b9f133b492dba78c528f10161"></a><!-- doxytag: member="OFFER" ref="a8107d8473b5b423f212ffa238e230894add74e92b9f133b492dba78c528f10161" args="" -->OFFER</em>&nbsp;</td><td>
+<p>Alguem está lhe oferecendo arquivos (acompanha um manifesto). </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a8107d8473b5b423f212ffa238e230894a9523203e14bfb4cc1ea7bb403d05f59d"></a><!-- doxytag: member="TRANSFER" ref="a8107d8473b5b423f212ffa238e230894a9523203e14bfb4cc1ea7bb403d05f59d" args="" -->TRANSFER</em>&nbsp;</td><td>
+<p>Tranferência iniciada. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a8107d8473b5b423f212ffa238e230894a5b6aeb6180356da800dd5d8cac896114"></a><!-- doxytag: member="COMPLETE" ref="a8107d8473b5b423f212ffa238e230894a5b6aeb6180356da800dd5d8cac896114" args="" -->COMPLETE</em>&nbsp;</td><td>
+<p>Transferência completada. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a8107d8473b5b423f212ffa238e230894ac7920ab10b5d25799da57c7d391f8bfc"></a><!-- doxytag: member="LOCAL_CANCEL" ref="a8107d8473b5b423f212ffa238e230894ac7920ab10b5d25799da57c7d391f8bfc" args="" -->LOCAL_CANCEL</em>&nbsp;</td><td>
+<p>Transferência cancelada localmente. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a8107d8473b5b423f212ffa238e230894a083d96a14e3d98e812e2cd3f5308d165"></a><!-- doxytag: member="REMOTE_CANCEL" ref="a8107d8473b5b423f212ffa238e230894a083d96a14e3d98e812e2cd3f5308d165" args="" -->REMOTE_CANCEL</em>&nbsp;</td><td>
+<p>Transferência cancelada remotamente. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a8107d8473b5b423f212ffa238e230894a78d4266954c1a008e7859d21faff3314"></a><!-- doxytag: member="FAILURE" ref="a8107d8473b5b423f212ffa238e230894a78d4266954c1a008e7859d21faff3314" args="" -->FAILURE</em>&nbsp;</td><td>
+<p>Falha durante transferência. </p>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+</div>
+</div>
+<hr/><h2>Construtores &amp; Destrutores</h2>
+<a class="anchor" id="a91d30e909ab8c51c53d1451d4b7dfcef"></a><!-- doxytag: member="br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient::FileShareClient" ref="a91d30e909ab8c51c53d1451d4b7dfcef" args="(std::string root_dir)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient::FileShareClient </td>
+          <td>(</td>
+          <td class="paramtype">std::string&nbsp;</td>
+          <td class="paramname"> <em>root_dir</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Constrói um objeto <a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient.html">FileShareClient</a> já passando tudo que é necessário para realizar uma conexão.</p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>root_dir</em>&nbsp;</td><td>Diretório onde os arquivos serão procurados ou escritos. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a92af93ef3499961dbe6b6e45ac6b0b5c"></a><!-- doxytag: member="br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient::~FileShareClient" ref="a92af93ef3499961dbe6b6e45ac6b0b5c" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient::~FileShareClient </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Destrói um objeto <a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient.html">FileShareClient</a>. </p>
+
+</div>
+</div>
+<hr/><h2>Métodos</h2>
+<a class="anchor" id="aa216e2d67c19e22c6bd3a71315019bb9"></a><!-- doxytag: member="br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient::onPossibleDestinationOnline" ref="aa216e2d67c19e22c6bd3a71315019bb9" args="(const buzz::Status &amp;status)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient::onPossibleDestinationOnline </td>
+          <td>(</td>
+          <td class="paramtype">const buzz::Status &amp;&nbsp;</td>
+          <td class="paramname"> <em>status</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método chamado quando algum usuário fica online, para que esta classe possa checar se existe algum item que está pendente para ser enviado para esse usuário.</p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>status</em>&nbsp;</td><td>Informações sobre o usuário que ficou online. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="acc096dd9ed0f906d22a3b168da216be2"></a><!-- doxytag: member="br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient::onSignon" ref="acc096dd9ed0f906d22a3b168da216be2" args="(cricket::SessionManager *session_manager, const buzz::Jid jid)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient::onSignon </td>
+          <td>(</td>
+          <td class="paramtype">cricket::SessionManager *&nbsp;</td>
+          <td class="paramname"> <em>session_manager</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const buzz::Jid&nbsp;</td>
+          <td class="paramname"> <em>jid</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método chamado depois que uma conexão é estabelecida. Envia informação de presença e se registra para receber notificações de presença de outros.</p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>session_manager</em>&nbsp;</td><td>O gerenciador da sessão atual. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>jid</em>&nbsp;</td><td>O endereço XMPP do usuário. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ae880077dd0b559a98eeb83fda410b7b2"></a><!-- doxytag: member="br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient::sendFiles" ref="ae880077dd0b559a98eeb83fda410b7b2" args="(vector&lt; string &gt; *files, const buzz::Jid &amp;send_to, map&lt; string, buzz::Status &gt; *roster)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient::sendFiles </td>
+          <td>(</td>
+          <td class="paramtype">vector&lt; string &gt; *&nbsp;</td>
+          <td class="paramname"> <em>files</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const buzz::Jid &amp;&nbsp;</td>
+          <td class="paramname"> <em>send_to</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">map&lt; string, buzz::Status &gt; *&nbsp;</td>
+          <td class="paramname"> <em>roster</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Envia arquivos e diretórios para um determinado amigo.</p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>files</em>&nbsp;</td><td>Vetor contendo os caminhos dos arquivos e diretórios que serão enviados </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>jid</em>&nbsp;</td><td>Identificador o amigo que irá receber os arquivos </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a89bea2344d930cfc0e0149630136e18d"></a><!-- doxytag: member="br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient::setListener" ref="a89bea2344d930cfc0e0149630136e18d" args="(IP2PEventListener *listener)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient::setListener </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PEventListener.html">IP2PEventListener</a> *&nbsp;</td>
+          <td class="paramname"> <em>listener</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Permite setar o objeto responsável por tratar mudanças de estado relacionadas a trasnferência de arquivos e pastas, inclusive o recebimento de oferecimento de um item.</p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>listener</em>&nbsp;</td><td>Observador que será notificado quando ocorrer qualquer mudança de estado relacionada a transferência de algum arquivo. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a7cca6557f5606ee125481b317c6a70d3"></a><!-- doxytag: member="br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient::setStatus" ref="a7cca6557f5606ee125481b317c6a70d3" args="(buzz::Status::Show show, string message)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void br::usp::icmc::intermidia::ginga::core::p2p::FileShareClient::setStatus </td>
+          <td>(</td>
+          <td class="paramtype">buzz::Status::Show&nbsp;</td>
+          <td class="paramname"> <em>show</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&nbsp;</td>
+          <td class="paramname"> <em>message</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Permite definir o próprio status.</p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>show</em>&nbsp;</td><td>Status a ser utilizado. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>message</em>&nbsp;</td><td>Mensagem personalizada opcional. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>A documentação para esta classe foi gerada a partir dos seguintes arquivos:<ul>
+<li>include/<a class="el" href="FileShareClient_8h_source.html">FileShareClient.h</a></li>
+<li>src/<a class="el" href="FileShareClient_8cpp.html">FileShareClient.cpp</a></li>
+</ul>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>Gerado em Wed Nov 17 16:35:47 2010 para Ginga-CC P2P por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Ginga-CC P2P: Referência da Classe br::usp::icmc::intermidia::ginga::core::p2p::IP2PEventListener</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Gerado por Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Página&nbsp;Principal</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Arquivos</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Lista&nbsp;de&nbsp;Componentes</span></a></li>
+      <li><a href="hierarchy.html"><span>Hierarquia&nbsp;de&nbsp;Classes</span></a></li>
+      <li><a href="functions.html"><span>Componentes&nbsp;Membros</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><b>br</b>::<b>usp</b>::<b>icmc</b>::<b>intermidia</b>::<b>ginga</b>::<b>core</b>::<b>p2p</b>::<a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PEventListener.html">IP2PEventListener</a>
+  </div>
+</div>
+<div class="contents">
+<h1>Referência da Classe br::usp::icmc::intermidia::ginga::core::p2p::IP2PEventListener</h1><!-- doxytag: class="br::usp::icmc::intermidia::ginga::core::p2p::IP2PEventListener" -->
+<p><code>#include &lt;<a class="el" href="IP2PEventListener_8h_source.html">IP2PEventListener.h</a>&gt;</code></p>
+
+<p><a href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PEventListener-members.html">Lista de todos os Membros.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Métodos Públicos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PEventListener.html#a89ed1fa0149ec684ef7e65b6aeeabb30">~IP2PEventListener</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PEventListener.html#ad609801c171a1066a28ce90ce7ba5928">transferStateChanged</a> (<a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient.html#a8107d8473b5b423f212ffa238e230894">FileShareClient::State</a> state, const cricket::FileShareManifest *manifest)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PEventListener.html#ad767ebd97d479dc99e6604ee98075d44">stateChanged</a> (buzz::XmppEngine::State state)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PEventListener.html#aa88a07c6d728cb0b8f557139248b8457">friendsStatusChanged</a> (const buzz::Status &amp;status)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PEventListener.html#a0724398599058bbcf4926501954c2ec7">chatMessageReceived</a> (const string &amp;from, const string &amp;text)=0</td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Descrição Detalhada</h2>
+<p>Interface que representa um observador de eventos P2P. </p>
+<hr/><h2>Construtores &amp; Destrutores</h2>
+<a class="anchor" id="a89ed1fa0149ec684ef7e65b6aeeabb30"></a><!-- doxytag: member="br::usp::icmc::intermidia::ginga::core::p2p::IP2PEventListener::~IP2PEventListener" ref="a89ed1fa0149ec684ef7e65b6aeeabb30" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual br::usp::icmc::intermidia::ginga::core::p2p::IP2PEventListener::~IP2PEventListener </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Destrói o <a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PEventListener.html">IP2PEventListener</a>. </p>
+
+<p>Referências <a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PEventListener.html#a0724398599058bbcf4926501954c2ec7">chatMessageReceived()</a>, <a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PEventListener.html#aa88a07c6d728cb0b8f557139248b8457">friendsStatusChanged()</a>, <a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PEventListener.html#ad767ebd97d479dc99e6604ee98075d44">stateChanged()</a> e <a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PEventListener.html#ad609801c171a1066a28ce90ce7ba5928">transferStateChanged()</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Métodos</h2>
+<a class="anchor" id="a0724398599058bbcf4926501954c2ec7"></a><!-- doxytag: member="br::usp::icmc::intermidia::ginga::core::p2p::IP2PEventListener::chatMessageReceived" ref="a0724398599058bbcf4926501954c2ec7" args="(const string &amp;from, const string &amp;text)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void br::usp::icmc::intermidia::ginga::core::p2p::IP2PEventListener::chatMessageReceived </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;&nbsp;</td>
+          <td class="paramname"> <em>from</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string &amp;&nbsp;</td>
+          <td class="paramname"> <em>text</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Notifica recebimento de mensagens de texto.</p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>from</em>&nbsp;</td><td>Bare jid do remetente em forma de string. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>text</em>&nbsp;</td><td>Mensagem enviada. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Referenciado por <a class="el" href="IP2PEventListener_8h_source.html#l00065">~IP2PEventListener()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa88a07c6d728cb0b8f557139248b8457"></a><!-- doxytag: member="br::usp::icmc::intermidia::ginga::core::p2p::IP2PEventListener::friendsStatusChanged" ref="aa88a07c6d728cb0b8f557139248b8457" args="(const buzz::Status &amp;status)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void br::usp::icmc::intermidia::ginga::core::p2p::IP2PEventListener::friendsStatusChanged </td>
+          <td>(</td>
+          <td class="paramtype">const buzz::Status &amp;&nbsp;</td>
+          <td class="paramname"> <em>status</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Notifica mudança de status de algum amigo.</p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>status</em>&nbsp;</td><td>Indica novo status de um amigo. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Referenciado por <a class="el" href="IP2PEventListener_8h_source.html#l00065">~IP2PEventListener()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad767ebd97d479dc99e6604ee98075d44"></a><!-- doxytag: member="br::usp::icmc::intermidia::ginga::core::p2p::IP2PEventListener::stateChanged" ref="ad767ebd97d479dc99e6604ee98075d44" args="(buzz::XmppEngine::State state)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void br::usp::icmc::intermidia::ginga::core::p2p::IP2PEventListener::stateChanged </td>
+          <td>(</td>
+          <td class="paramtype">buzz::XmppEngine::State&nbsp;</td>
+          <td class="paramname"> <em>state</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Notifica mudança de estado da conexão do <a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1P2PManager.html">P2PManager</a>.</p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>state</em>&nbsp;</td><td>Indica o novo estado da conexão. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Referenciado por <a class="el" href="IP2PEventListener_8h_source.html#l00065">~IP2PEventListener()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad609801c171a1066a28ce90ce7ba5928"></a><!-- doxytag: member="br::usp::icmc::intermidia::ginga::core::p2p::IP2PEventListener::transferStateChanged" ref="ad609801c171a1066a28ce90ce7ba5928" args="(FileShareClient::State state, const cricket::FileShareManifest *manifest)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void br::usp::icmc::intermidia::ginga::core::p2p::IP2PEventListener::transferStateChanged </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1FileShareClient.html#a8107d8473b5b423f212ffa238e230894">FileShareClient::State</a>&nbsp;</td>
+          <td class="paramname"> <em>state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const cricket::FileShareManifest *&nbsp;</td>
+          <td class="paramname"> <em>manifest</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Notifica oferta para receber um arquivo ou pasta ou alguma mudança de estado relacionada a uma transferência de arquivo ou pasta.</p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>state</em>&nbsp;</td><td>Indica o que ocorreu. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>manifest</em>&nbsp;</td><td>Descrição dos itens que estão sendo oferecidos. Só é enviado quando o state é OFFER. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Referenciado por <a class="el" href="IP2PEventListener_8h_source.html#l00065">~IP2PEventListener()</a>.</p>
+
+</div>
+</div>
+<hr/>A documentação para esta classe foi gerada a partir do seguinte arquivo:<ul>
+<li>include/<a class="el" href="IP2PEventListener_8h_source.html">IP2PEventListener.h</a></li>
+</ul>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>Gerado em Wed Nov 17 16:35:47 2010 para Ginga-CC P2P por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

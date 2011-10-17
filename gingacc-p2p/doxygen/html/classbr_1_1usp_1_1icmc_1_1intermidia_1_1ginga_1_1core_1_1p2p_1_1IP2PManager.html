@@ -1,0 +1,476 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Ginga-CC P2P: Referência da Classe br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Gerado por Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Página&nbsp;Principal</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Arquivos</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Lista&nbsp;de&nbsp;Componentes</span></a></li>
+      <li><a href="hierarchy.html"><span>Hierarquia&nbsp;de&nbsp;Classes</span></a></li>
+      <li><a href="functions.html"><span>Componentes&nbsp;Membros</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><b>br</b>::<b>usp</b>::<b>icmc</b>::<b>intermidia</b>::<b>ginga</b>::<b>core</b>::<b>p2p</b>::<a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html">IP2PManager</a>
+  </div>
+</div>
+<div class="contents">
+<h1>Referência da Classe br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager</h1><!-- doxytag: class="br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager" -->
+<p><code>#include &lt;<a class="el" href="IP2PManager_8h_source.html">IP2PManager.h</a>&gt;</code></p>
+<div class="dynheader">
+Diagrama de Hierarquia para br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager:</div>
+<div class="dynsection">
+ <div class="center">
+  <img src="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.png" usemap="#br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager_map" alt=""/>
+  <map id="br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager_map" name="br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager_map">
+<area href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1P2PManager.html" alt="br::usp::icmc::intermidia::ginga::core::p2p::P2PManager" shape="rect" coords="0,56,321,80"/>
+</map>
+ </div>
+</div>
+
+<p><a href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager-members.html">Lista de todos os Membros.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Tipos Públicos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#ae4b55c6c0a7f1613e5616de08914237e">Status</a> { <br/>
+&nbsp;&nbsp;<a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#ae4b55c6c0a7f1613e5616de08914237eab09a6a91504ac9afe2b5ba380172135c">NONE</a> =  0, 
+<a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#ae4b55c6c0a7f1613e5616de08914237ea7461c990afc006337f7afee3a6a9e188">OFFLINE</a> =  1, 
+<a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#ae4b55c6c0a7f1613e5616de08914237ea63b825d6fe1c817d7efda9a8d7147532">XA</a> =  2, 
+<a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#ae4b55c6c0a7f1613e5616de08914237ea05723d382e712227f615f55123684ea0">AWAY</a> =  3, 
+<br/>
+&nbsp;&nbsp;<a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#ae4b55c6c0a7f1613e5616de08914237eae7f30a061277349987d27d5785be55eb">DND</a> =  4, 
+<a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#ae4b55c6c0a7f1613e5616de08914237ea637e72c86a809aed5430d4f554d4edfd">ONLINE</a> =  5, 
+<a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#ae4b55c6c0a7f1613e5616de08914237ea78f3642b5e139385a31bf83b14c3ce3d">CHAT</a> =  6
+<br/>
+ }</td></tr>
+<tr><td colspan="2"><h2>Métodos Públicos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#a0601bca0990ec599cec1a5ed33cf9358">~IP2PManager</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#a720d5e610e2018254d2ecc0237a9d4c4">connect</a> (string server, int port, string username, talk_base::InsecureCryptStringImpl pass, <a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PEventListener.html">IP2PEventListener</a> *listener=NULL)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#a48b9e24798125b0937abdb1577475991">disconnect</a> ()=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#a5d90e6289098fedff8131f6a31e6be18">sendFiles</a> (vector&lt; string &gt; *files, string username)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#a780b05d26f8438b405cc176051ab31f4">sendFile</a> (string file, string username)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#a4de46a01e59fd8986ee7ccee739e49a1">sendChatMessage</a> (string username, string text)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual vector&lt; buzz::Status &gt; *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#a45c81b565c3112b7d37328103f0918ab">getFriends</a> ()=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual map&lt; string, <br class="typebreak"/>
+buzz::Status &gt; *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#abfa3890264dd16b4b9d9eec28d13f69e">getFriendsMap</a> ()=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#adc2163d5ef7493c9d23f74a7fcdbb398">setStatus</a> (<a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#ae4b55c6c0a7f1613e5616de08914237e">Status</a> s, string message)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual buzz::Status *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#a3e566b2e50875009b254caeed5f374f9">getStatus</a> ()=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#a2dcaff706e7b9f04602de239b287906d">accept</a> ()=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#ac43a21a8308ca36d1143026bbca1a4a9">reject</a> ()=0</td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Descrição Detalhada</h2>
+<p>Interface do gerenciador de conexões P2P. </p>
+<hr/><h2>Enumerações</h2>
+<a class="anchor" id="ae4b55c6c0a7f1613e5616de08914237e"></a><!-- doxytag: member="br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager::Status" ref="ae4b55c6c0a7f1613e5616de08914237e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#ae4b55c6c0a7f1613e5616de08914237e">br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager::Status</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl><dt><b>Valores enumerados: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="ae4b55c6c0a7f1613e5616de08914237eab09a6a91504ac9afe2b5ba380172135c"></a><!-- doxytag: member="NONE" ref="ae4b55c6c0a7f1613e5616de08914237eab09a6a91504ac9afe2b5ba380172135c" args="" -->NONE</em>&nbsp;</td><td>
+<p>Usado quando o status não estiver definido. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ae4b55c6c0a7f1613e5616de08914237ea7461c990afc006337f7afee3a6a9e188"></a><!-- doxytag: member="OFFLINE" ref="ae4b55c6c0a7f1613e5616de08914237ea7461c990afc006337f7afee3a6a9e188" args="" -->OFFLINE</em>&nbsp;</td><td>
+<p>Usado quando o usuário estiver desconectado. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ae4b55c6c0a7f1613e5616de08914237ea63b825d6fe1c817d7efda9a8d7147532"></a><!-- doxytag: member="XA" ref="ae4b55c6c0a7f1613e5616de08914237ea63b825d6fe1c817d7efda9a8d7147532" args="" -->XA</em>&nbsp;</td><td>
+<p>eXtended Away - Ausência estendida. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ae4b55c6c0a7f1613e5616de08914237ea05723d382e712227f615f55123684ea0"></a><!-- doxytag: member="AWAY" ref="ae4b55c6c0a7f1613e5616de08914237ea05723d382e712227f615f55123684ea0" args="" -->AWAY</em>&nbsp;</td><td>
+<p>Ausente </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ae4b55c6c0a7f1613e5616de08914237eae7f30a061277349987d27d5785be55eb"></a><!-- doxytag: member="DND" ref="ae4b55c6c0a7f1613e5616de08914237eae7f30a061277349987d27d5785be55eb" args="" -->DND</em>&nbsp;</td><td>
+<p>Do Not Disturb - Não pertube. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ae4b55c6c0a7f1613e5616de08914237ea637e72c86a809aed5430d4f554d4edfd"></a><!-- doxytag: member="ONLINE" ref="ae4b55c6c0a7f1613e5616de08914237ea637e72c86a809aed5430d4f554d4edfd" args="" -->ONLINE</em>&nbsp;</td><td>
+<p>Disponível. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ae4b55c6c0a7f1613e5616de08914237ea78f3642b5e139385a31bf83b14c3ce3d"></a><!-- doxytag: member="CHAT" ref="ae4b55c6c0a7f1613e5616de08914237ea78f3642b5e139385a31bf83b14c3ce3d" args="" -->CHAT</em>&nbsp;</td><td>
+<p>Querendo conversar. </p>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+</div>
+</div>
+<hr/><h2>Construtores &amp; Destrutores</h2>
+<a class="anchor" id="a0601bca0990ec599cec1a5ed33cf9358"></a><!-- doxytag: member="br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager::~IP2PManager" ref="a0601bca0990ec599cec1a5ed33cf9358" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager::~IP2PManager </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Destói o objeto <a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1P2PManager.html">P2PManager</a>. </p>
+
+</div>
+</div>
+<hr/><h2>Métodos</h2>
+<a class="anchor" id="a2dcaff706e7b9f04602de239b287906d"></a><!-- doxytag: member="br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager::accept" ref="a2dcaff706e7b9f04602de239b287906d" args="()=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager::accept </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Aceita o recebimento de um arquivo. </p>
+
+<p>Implementado por <a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1P2PManager.html#a517504ad3a8bda8e3d76b5da7ba9939f">br::usp::icmc::intermidia::ginga::core::p2p::P2PManager</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a720d5e610e2018254d2ecc0237a9d4c4"></a><!-- doxytag: member="br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager::connect" ref="a720d5e610e2018254d2ecc0237a9d4c4" args="(string server, int port, string username, talk_base::InsecureCryptStringImpl pass, IP2PEventListener *listener=NULL)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager::connect </td>
+          <td>(</td>
+          <td class="paramtype">string&nbsp;</td>
+          <td class="paramname"> <em>server</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>port</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&nbsp;</td>
+          <td class="paramname"> <em>username</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">talk_base::InsecureCryptStringImpl&nbsp;</td>
+          <td class="paramname"> <em>pass</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PEventListener.html">IP2PEventListener</a> *&nbsp;</td>
+          <td class="paramname"> <em>listener</em> = <code>NULL</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Conecta ao servidor/porta desejados usando o nome de usuário e senha fornecidos.</p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>server</em>&nbsp;</td><td>Servidor a ser conectado. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>port</em>&nbsp;</td><td>Porta usada para conexão com servidor. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>username</em>&nbsp;</td><td>Nome do usuário utilizado na conexão. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pass</em>&nbsp;</td><td>Senha utilizado na conexão. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>listener</em>&nbsp;</td><td>Observador de eventos relacionados à conexão P2P, como mudança do estado da conexão e de transferências de arquivos ou mudança de status de algum amigo. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implementado por <a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1P2PManager.html#a8def9c0c69b0065372cdff8e558f17f4">br::usp::icmc::intermidia::ginga::core::p2p::P2PManager</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a48b9e24798125b0937abdb1577475991"></a><!-- doxytag: member="br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager::disconnect" ref="a48b9e24798125b0937abdb1577475991" args="()=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager::disconnect </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Disconecta do servidor. </p>
+
+<p>Implementado por <a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1P2PManager.html#a52a7440c36acc668ae0dba42edd67b7d">br::usp::icmc::intermidia::ginga::core::p2p::P2PManager</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a45c81b565c3112b7d37328103f0918ab"></a><!-- doxytag: member="br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager::getFriends" ref="a45c81b565c3112b7d37328103f0918ab" args="()=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual vector&lt;buzz::Status&gt;* br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager::getFriends </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Retorna a lista de amigos conectados.</p>
+<dl class="return"><dt><b>Retorna:</b></dt><dd>Um vetor com o status dos amigos conectados. completo. </dd></dl>
+
+<p>Implementado por <a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1P2PManager.html#ab67876af258af7547c489675afb93635">br::usp::icmc::intermidia::ginga::core::p2p::P2PManager</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abfa3890264dd16b4b9d9eec28d13f69e"></a><!-- doxytag: member="br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager::getFriendsMap" ref="abfa3890264dd16b4b9d9eec28d13f69e" args="()=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual map&lt;string, buzz::Status&gt;* br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager::getFriendsMap </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Retorna a lista de amigos conectados.</p>
+<dl class="return"><dt><b>Retorna:</b></dt><dd>Um mapa que relaciona o identificador do amigo (jid completo em forma de string) com seu status completo. </dd></dl>
+
+<p>Implementado por <a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1P2PManager.html#a878ba7b06d254deb977941a0f73cc81c">br::usp::icmc::intermidia::ginga::core::p2p::P2PManager</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3e566b2e50875009b254caeed5f374f9"></a><!-- doxytag: member="br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager::getStatus" ref="a3e566b2e50875009b254caeed5f374f9" args="()=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual buzz::Status* br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager::getStatus </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Permite acessar o próprio status. Pode ser chamado antes ou depois de se conectar.</p>
+<dl class="return"><dt><b>Retorna:</b></dt><dd>Status completo. </dd></dl>
+
+<p>Implementado por <a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1P2PManager.html#a034857fb3348c52ec13fe66f8ee1fb3c">br::usp::icmc::intermidia::ginga::core::p2p::P2PManager</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac43a21a8308ca36d1143026bbca1a4a9"></a><!-- doxytag: member="br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager::reject" ref="ac43a21a8308ca36d1143026bbca1a4a9" args="()=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager::reject </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Rejeita o recebimento de um arquivo. </p>
+
+<p>Implementado por <a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1P2PManager.html#a891a4047a8955c761683eecced70a43d">br::usp::icmc::intermidia::ginga::core::p2p::P2PManager</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4de46a01e59fd8986ee7ccee739e49a1"></a><!-- doxytag: member="br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager::sendChatMessage" ref="a4de46a01e59fd8986ee7ccee739e49a1" args="(string username, string text)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager::sendChatMessage </td>
+          <td>(</td>
+          <td class="paramtype">string&nbsp;</td>
+          <td class="paramname"> <em>username</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&nbsp;</td>
+          <td class="paramname"> <em>text</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Envia uma mensagem de texto para um determinado amigo.</p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>username</em>&nbsp;</td><td>Identificador o amigo que irá receber os arquivos </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>text</em>&nbsp;</td><td>Mensagem a ser enviada </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implementado por <a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1P2PManager.html#aba42f2f112f2cf40bb06d4ab5e91cbc1">br::usp::icmc::intermidia::ginga::core::p2p::P2PManager</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a780b05d26f8438b405cc176051ab31f4"></a><!-- doxytag: member="br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager::sendFile" ref="a780b05d26f8438b405cc176051ab31f4" args="(string file, string username)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager::sendFile </td>
+          <td>(</td>
+          <td class="paramtype">string&nbsp;</td>
+          <td class="paramname"> <em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&nbsp;</td>
+          <td class="paramname"> <em>username</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Envia arquivo ou diretório para um determinado amigo.</p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>file</em>&nbsp;</td><td>Caminho do arquivo ou diretório que será enviado </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>jid</em>&nbsp;</td><td>Identificador o amigo que irá receber os arquivos </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implementado por <a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1P2PManager.html#a9fb02062e8400eef048133a547d9b5fa">br::usp::icmc::intermidia::ginga::core::p2p::P2PManager</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5d90e6289098fedff8131f6a31e6be18"></a><!-- doxytag: member="br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager::sendFiles" ref="a5d90e6289098fedff8131f6a31e6be18" args="(vector&lt; string &gt; *files, string username)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager::sendFiles </td>
+          <td>(</td>
+          <td class="paramtype">vector&lt; string &gt; *&nbsp;</td>
+          <td class="paramname"> <em>files</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&nbsp;</td>
+          <td class="paramname"> <em>username</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Envia arquivos e diretórios para um determinado amigo.</p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>files</em>&nbsp;</td><td>Vetor contendo os caminhos dos arquivos e diretórios que serão enviados </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>jid</em>&nbsp;</td><td>Identificador o amigo que irá receber os arquivos </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implementado por <a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1P2PManager.html#abcf62501438880b04515606c80939c9e">br::usp::icmc::intermidia::ginga::core::p2p::P2PManager</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adc2163d5ef7493c9d23f74a7fcdbb398"></a><!-- doxytag: member="br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager::setStatus" ref="adc2163d5ef7493c9d23f74a7fcdbb398" args="(Status s, string message)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void br::usp::icmc::intermidia::ginga::core::p2p::IP2PManager::setStatus </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#ae4b55c6c0a7f1613e5616de08914237e">Status</a>&nbsp;</td>
+          <td class="paramname"> <em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&nbsp;</td>
+          <td class="paramname"> <em>message</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Permite definir o próprio status. Pode ser chamado antes ou depois de se conectar.</p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>s</em>&nbsp;</td><td>Status a ser utilizado. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>Veja também:</b></dt><dd><a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1IP2PManager.html#ae4b55c6c0a7f1613e5616de08914237e">Status</a>. </dd></dl>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>message</em>&nbsp;</td><td>Mensagem personalizada opcional. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implementado por <a class="el" href="classbr_1_1usp_1_1icmc_1_1intermidia_1_1ginga_1_1core_1_1p2p_1_1P2PManager.html#acdeac6f81a5606acf66cfe9b0de46994">br::usp::icmc::intermidia::ginga::core::p2p::P2PManager</a>.</p>
+
+</div>
+</div>
+<hr/>A documentação para esta classe foi gerada a partir do seguinte arquivo:<ul>
+<li>include/<a class="el" href="IP2PManager_8h_source.html">IP2PManager.h</a></li>
+</ul>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>Gerado em Wed Nov 17 16:35:47 2010 para Ginga-CC P2P por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>
